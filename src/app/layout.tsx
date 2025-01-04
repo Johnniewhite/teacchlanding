@@ -1,5 +1,7 @@
-import './globals.css';
+import type { Metadata } from 'next';
 import { Space_Grotesk, Syne } from 'next/font/google';
+import './globals.css';
+import { Navbar } from '@/components/Navbar';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -13,9 +15,9 @@ const syne = Syne({
   display: 'swap',
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Teacch - Empowering Social Innovation',
-  description: 'Teacch is a leading platform for social innovation, offering TED Circle discussions, Festival of Change events, and comprehensive incubator programs.',
+  description: 'Transforming ideas into sustainable solutions that drive positive change.',
 };
 
 export default function RootLayout({
@@ -24,11 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${syne.variable}`}>
-      <body className="font-sans bg-dark-500 text-white overflow-x-hidden w-screen">
-        <main className="relative overflow-x-hidden">
-          {children}
-        </main>
+    <html lang="en" className="dark scroll-smooth">
+      <body className={`${spaceGrotesk.variable} ${syne.variable} font-body overflow-x-hidden w-screen min-h-screen bg-light-500 text-dark-500 dark:bg-dark-500 dark:text-white transition-colors duration-300`}>
+        <Navbar />
+        {children}
       </body>
     </html>
   );

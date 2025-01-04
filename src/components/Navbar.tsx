@@ -1,194 +1,117 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link as ScrollLink } from 'react-scroll';
+import { motion } from 'framer-motion';
+import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
+
+const navLinks = [
+  { href: '#home', label: 'Home' },
+  { href: '#services', label: 'Services' },
+  { href: '#values', label: 'Values' },
+  { href: '#subsidiaries', label: 'Initiatives' },
+  { href: '#contact', label: 'Contact' },
+];
 
 export const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { name: 'Home', href: 'home' },
-    { name: 'About', href: 'about' },
-    { name: 'Services', href: 'services' },
-    { name: 'TED Circle', href: 'ted-circle' },
-    { name: 'Festival of Change', href: 'festival' },
-    { name: 'Contact', href: 'contact' },
-  ];
-
-  const navVariants = {
-    hidden: { y: -100, opacity: 0 },
-    visible: { 
-      y: 0, 
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        damping: 20
-      }
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    } else {
+      document.documentElement.classList.add('light');
+      document.documentElement.classList.remove('dark');
     }
-  };
-
-  const menuItemVariants = {
-    hidden: { x: -20, opacity: 0 },
-    visible: { 
-      x: 0, 
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100
-      }
-    }
-  };
+  }, [isDarkMode]);
 
   return (
-    <motion.nav 
-      initial="hidden"
-      animate="visible"
-      variants={navVariants}
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-light-500/80 dark:bg-dark-500/80 backdrop-blur-xl border-b border-dark-500/5 dark:border-white/5'
+          : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
-          <div className="flex-shrink-0 flex items-center">
-            <Link href="/">
-              <div className="relative w-40 h-12">
-                <Image
-                  src="/logo.png"
-                  alt="TEACcH Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </Link>
-          </div>
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <a href="#" className="flex items-center space-x-2">
+            <span className="text-2xl font-bold font-display bg-gradient-to-r from-teacch-green to-teacch-orange bg-clip-text text-transparent">
+              TEACCH
+            </span>
+          </a>
 
-          {/* Desktop menu */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.div
-                key={item.name}
-                variants={menuItemVariants}
-                initial="hidden"
-                animate="visible"
-                transition={{ delay: index * 0.1 }}
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-dark-500 dark:text-gray-300 hover:text-teacch-orange dark:hover:text-teacch-orange transition-colors duration-300"
               >
-                <ScrollLink
-                  to={item.href}
-                  smooth={true}
-                  duration={500}
-                  offset={-100}
-                  className={`cursor-pointer text-base font-medium transition-all duration-300 ${
-                    isScrolled 
-                      ? 'text-gray-900 hover:text-teacch-orange' 
-                      : 'text-white hover:text-teacch-orange'
-                  }`}
-                >
-                  {item.name}
-                </ScrollLink>
-              </motion.div>
+                {link.label}
+              </a>
             ))}
-            <motion.button
-              variants={menuItemVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: navItems.length * 0.1 }}
-              className="bg-teacch-green text-white px-6 py-2 rounded-full hover:bg-teacch-green/90 transition-all duration-300 transform hover:scale-105"
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="p-2 rounded-lg bg-light-600 dark:bg-dark-600 text-dark-500 dark:text-gray-300 hover:text-teacch-orange dark:hover:text-teacch-orange transition-colors duration-300"
             >
-              Get Started
-            </motion.button>
+              {isDarkMode ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
+            </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Navigation Button */}
+          <div className="md:hidden flex items-center space-x-4">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`p-2 rounded-md transition-colors duration-300 ${
-                isScrolled ? 'text-gray-900' : 'text-white'
-              }`}
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="p-2 rounded-lg bg-light-600 dark:bg-dark-600 text-dark-500 dark:text-gray-300 hover:text-teacch-orange dark:hover:text-teacch-orange transition-colors duration-300"
             >
-              <span className="sr-only">Open menu</span>
-              <div className="w-6 h-6 flex flex-col justify-between transform transition-transform duration-300">
-                <span 
-                  className={`block h-0.5 w-6 transform transition-all duration-300 ${
-                    isMenuOpen ? 'rotate-45 translate-y-2.5' : ''
-                  } ${isScrolled ? 'bg-gray-900' : 'bg-white'}`}
-                />
-                <span 
-                  className={`block h-0.5 w-6 transition-all duration-300 ${
-                    isMenuOpen ? 'opacity-0' : ''
-                  } ${isScrolled ? 'bg-gray-900' : 'bg-white'}`}
-                />
-                <span 
-                  className={`block h-0.5 w-6 transform transition-all duration-300 ${
-                    isMenuOpen ? '-rotate-45 -translate-y-2.5' : ''
-                  } ${isScrolled ? 'bg-gray-900' : 'bg-white'}`}
-                />
-              </div>
+              {isDarkMode ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
+            </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-lg bg-light-600 dark:bg-dark-600 text-dark-500 dark:text-gray-300 hover:text-teacch-orange dark:hover:text-teacch-orange transition-colors duration-300"
+            >
+              {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/95 backdrop-blur-md"
-          >
-            <div className="px-4 pt-2 pb-3 space-y-1">
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <ScrollLink
-                    to={item.href}
-                    smooth={true}
-                    duration={500}
-                    offset={-100}
-                    className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-teacch-orange transition-colors duration-200"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </ScrollLink>
-                </motion.div>
-              ))}
-              <motion.div
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: navItems.length * 0.1 }}
-                className="px-3 py-2"
-              >
-                <button className="w-full bg-teacch-green text-white px-6 py-2 rounded-full hover:bg-teacch-green/90 transition-all duration-300 transform hover:scale-105">
-                  Get Started
-                </button>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Mobile Navigation Menu */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -20 }}
+        transition={{ duration: 0.2 }}
+        className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}
+      >
+        <div className="px-4 pt-2 pb-4 bg-light-500/95 dark:bg-dark-500/95 backdrop-blur-xl border-b border-dark-500/5 dark:border-white/5">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="block py-3 text-dark-500 dark:text-gray-300 hover:text-teacch-orange dark:hover:text-teacch-orange transition-colors duration-300"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </motion.div>
     </motion.nav>
   );
 };

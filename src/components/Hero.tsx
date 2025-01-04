@@ -12,8 +12,8 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center py-32 overflow-hidden" ref={ref}>
       {/* Background Elements */}
       <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-500/95 to-dark-500"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-light-500 via-light-500/95 to-light-500 dark:from-dark-500 dark:via-dark-500/95 dark:to-dark-500"></div>
         
         {/* Animated Background Shapes */}
         <motion.div
@@ -70,7 +70,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg md:text-xl text-dark-400 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0"
             >
               Join us in creating sustainable solutions that drive positive change. Through innovation, collaboration, and dedication, we&apos;re building a future where every idea has the potential to transform lives.
             </motion.p>
@@ -93,7 +93,7 @@ export const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="#services"
-                className="px-8 py-4 bg-dark-600 text-white font-medium rounded-lg w-full sm:w-auto text-center border border-white/5 transition-all duration-300 hover:bg-dark-500 hover:border-teacch-orange/50"
+                className="px-8 py-4 bg-light-600 dark:bg-dark-600 text-dark-500 dark:text-white font-medium rounded-lg w-full sm:w-auto text-center border border-dark-500/5 dark:border-white/5 transition-all duration-300 hover:bg-light-500 dark:hover:bg-dark-500 hover:border-teacch-orange/50"
               >
                 Explore Services
               </motion.a>
@@ -105,15 +105,17 @@ export const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
+            className="relative h-full"
           >
-            <div className="relative w-full aspect-square">
+            <div className="relative h-[calc(100vh-8rem)] w-full">
               <Image
-                src="/logo.png"
+                src="/hero.png"
                 alt="Teacch Innovation"
                 fill
-                className="object-contain"
+                className="object-contain object-bottom"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={100}
               />
             </div>
           </motion.div>
@@ -124,14 +126,14 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             className="flex flex-col items-center space-y-2"
           >
-            <span className="text-sm text-gray-400">Scroll to explore</span>
+            <span className="text-sm text-dark-400 dark:text-gray-400">Scroll to explore</span>
             <svg
               className="w-6 h-6 text-teacch-orange"
               fill="none"

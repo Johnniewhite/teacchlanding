@@ -90,11 +90,11 @@ export const Subsidiaries = () => {
   const isInView = useInView(sectionRef, { once: true });
 
   return (
-    <section className="relative py-32 w-full bg-dark-500 overflow-hidden" id="subsidiaries" ref={sectionRef}>
+    <section className="relative py-32 w-full bg-light-500 dark:bg-dark-500 overflow-hidden" id="subsidiaries" ref={sectionRef}>
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 w-full">
-        <div className="absolute inset-0 w-full bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black,transparent)]"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-500/95 to-dark-500"></div>
+        <div className="absolute inset-0 w-full bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black,transparent)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-light-500 via-light-500/95 to-light-500 dark:from-dark-500 dark:via-dark-500/95 dark:to-dark-500"></div>
       </div>
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,13 +107,13 @@ export const Subsidiaries = () => {
           <span className="inline-block text-sm md:text-base font-medium text-teacch-orange uppercase tracking-wider mb-4">
             Our Initiatives
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-dark-500 dark:text-white">
             Driving{' '}
             <span className="text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
               Social Innovation
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-dark-400 dark:text-gray-400 max-w-3xl mx-auto">
             Through our diverse programs and initiatives, we&apos;re fostering sustainable change and empowering the next generation of innovators.
           </p>
         </motion.div>
@@ -128,27 +128,27 @@ export const Subsidiaries = () => {
               className="group relative"
             >
               <div className={`absolute inset-0 bg-gradient-to-r ${subsidiary.gradient} opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-500 -z-10`}></div>
-              <div className="relative glass rounded-2xl p-8 h-full border border-white/5 transition-all duration-500 hover:border-white/20">
+              <div className="relative glass rounded-2xl p-8 h-full border border-dark-500/5 dark:border-white/5 bg-light-600/50 dark:bg-dark-600/50 backdrop-blur-xl transition-all duration-500 hover:border-teacch-orange/20">
                 <div className="flex flex-col h-full">
                   <div className="flex items-center mb-6">
                     <div className="flex items-center justify-center">
                       {subsidiary.logo}
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-2xl font-bold font-display text-white group-hover:text-teacch-orange transition-colors duration-300">
+                      <h3 className="text-2xl font-bold font-display text-dark-500 dark:text-white group-hover:text-teacch-orange transition-colors duration-300">
                         {subsidiary.title}
                       </h3>
-                      <p className="text-sm text-gray-400">{subsidiary.subtitle}</p>
+                      <p className="text-sm text-dark-400 dark:text-gray-400">{subsidiary.subtitle}</p>
                     </div>
                   </div>
-                  <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="text-dark-400 dark:text-gray-400 mb-6 group-hover:text-dark-500 dark:group-hover:text-gray-300 transition-colors duration-300">
                     {subsidiary.description}
                   </p>
                   <div className="grid grid-cols-2 gap-4 mt-auto">
                     {subsidiary.features.map((feature) => (
                       <div
                         key={feature}
-                        className="flex items-center space-x-2 text-sm text-gray-400"
+                        className="flex items-center space-x-2 text-sm text-dark-400 dark:text-gray-400"
                       >
                         <div className="w-1.5 h-1.5 rounded-full bg-teacch-orange"></div>
                         <span>{feature}</span>

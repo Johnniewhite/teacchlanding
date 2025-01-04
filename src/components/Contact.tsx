@@ -80,135 +80,70 @@ export const Contact = () => {
   }, []);
 
   return (
-    <section className="relative py-32 w-full bg-dark-500 overflow-hidden" id="contact" ref={sectionRef}>
+    <section className="relative py-32 w-full bg-light-500 dark:bg-dark-500 overflow-hidden" id="contact" ref={sectionRef}>
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 w-full">
-        <div className="absolute inset-0 w-full bg-pattern opacity-5"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-500 via-dark-500/95 to-dark-500"></div>
+        <div className="absolute inset-0 w-full bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-light-500 via-light-500/95 to-light-500 dark:from-dark-500 dark:via-dark-500/95 dark:to-dark-500"></div>
       </div>
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20" ref={titleRef}>
+        <div className="text-center mb-20">
           <span className="inline-block text-sm md:text-base font-medium text-teacch-orange uppercase tracking-wider mb-4">
             Get in Touch
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6">
-            Let&apos;s Start a{' '}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-dark-500 dark:text-white">
+            Let&apos;s Create{' '}
             <span className="text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
-              Conversation
+              Together
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-dark-400 dark:text-gray-400 max-w-3xl mx-auto">
             Have a project in mind? We&apos;d love to hear about it. Let&apos;s discuss how we can help bring your ideas to life.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="flex items-start space-x-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-teacch-green to-teacch-orange p-3 text-white">
-                  <FaEnvelope className="w-full h-full" />
-                </div>
-              </div>
+        <div className="max-w-3xl mx-auto">
+          <form className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-bold mb-2">Email Us</h3>
-                <p className="text-gray-400">
-                  <a href="mailto:hello@teacch.com" className="hover:text-teacch-orange transition-colors duration-300">
-                    hello@teacch.com
-                  </a>
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-teacch-green to-teacch-orange p-3 text-white">
-                  <FaPhone className="w-full h-full" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2">Call Us</h3>
-                <p className="text-gray-400">
-                  <a href="tel:+1234567890" className="hover:text-teacch-orange transition-colors duration-300">
-                    +1 (234) 567-890
-                  </a>
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-teacch-green to-teacch-orange p-3 text-white">
-                  <FaMapMarkerAlt className="w-full h-full" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2">Visit Us</h3>
-                <p className="text-gray-400">
-                  123 Innovation Street<br />
-                  Tech Hub, Digital City 12345
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <form
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="glass rounded-2xl p-8 border border-white/5 hover:border-white/20 transition-all duration-500"
-          >
-            <div className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
-                  Your Name
+                <label htmlFor="name" className="block text-sm font-medium text-dark-500 dark:text-white mb-2">
+                  Name
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-dark-600 border border-white/5 focus:border-teacch-orange focus:ring-2 focus:ring-teacch-orange/20 transition-all duration-300 text-white"
-                  placeholder="John Doe"
-                  required
+                  className="w-full px-4 py-3 rounded-lg bg-light-600 dark:bg-dark-600 text-dark-500 dark:text-white border border-dark-500/5 dark:border-white/5 focus:outline-none focus:ring-2 focus:ring-teacch-orange/50"
+                  placeholder="Your name"
                 />
               </div>
-
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
-                  Your Email
+                <label htmlFor="email" className="block text-sm font-medium text-dark-500 dark:text-white mb-2">
+                  Email
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-dark-600 border border-white/5 focus:border-teacch-orange focus:ring-2 focus:ring-teacch-orange/20 transition-all duration-300 text-white"
-                  placeholder="john@example.com"
-                  required
+                  className="w-full px-4 py-3 rounded-lg bg-light-600 dark:bg-dark-600 text-dark-500 dark:text-white border border-dark-500/5 dark:border-white/5 focus:outline-none focus:ring-2 focus:ring-teacch-orange/50"
+                  placeholder="Your email"
                 />
               </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={6}
-                  className="w-full px-4 py-3 rounded-lg bg-dark-600 border border-white/5 focus:border-teacch-orange focus:ring-2 focus:ring-teacch-orange/20 transition-all duration-300 text-white resize-none"
-                  placeholder="Tell us about your project..."
-                  required
-                ></textarea>
-              </div>
-
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-dark-500 dark:text-white mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={6}
+                className="w-full px-4 py-3 rounded-lg bg-light-600 dark:bg-dark-600 text-dark-500 dark:text-white border border-dark-500/5 dark:border-white/5 focus:outline-none focus:ring-2 focus:ring-teacch-orange/50"
+                placeholder="Your message"
+              ></textarea>
+            </div>
+            <div>
               <button
                 type="submit"
                 className="w-full px-8 py-4 rounded-lg bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium hover:shadow-lg hover:shadow-teacch-orange/20 transition-all duration-300 transform hover:-translate-y-1"
