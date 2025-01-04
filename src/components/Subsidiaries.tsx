@@ -2,14 +2,18 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaGraduationCap, FaCalendarAlt, FaLightbulb, FaShoppingBag } from 'react-icons/fa';
+import Image from 'next/image';
 
 const subsidiaries = [
   {
     title: 'TED Circle',
     subtitle: 'The Education Development Circle',
     description: 'Empowering social innovators with essential knowledge and advanced skills for creating sustainable solutions. Our program focuses on building entrepreneurial solutions driven by passion for change.',
-    icon: FaGraduationCap,
+    logo: (
+      <div className="text-2xl font-bold font-display bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent">
+        The Education Development Circle
+      </div>
+    ),
     features: [
       'Advanced Skills Development',
       'Entrepreneurial Training',
@@ -22,7 +26,16 @@ const subsidiaries = [
     title: 'Festival of Change',
     subtitle: 'Annual Innovation Conference',
     description: 'A transformative conference responding to global education challenges. We bring together thought leaders, innovators, and change-makers to generate bold ideas and inspire action.',
-    icon: FaCalendarAlt,
+    logo: (
+      <div className="relative w-48 h-12">
+        <Image
+          src="/foc.png"
+          alt="Festival of Change"
+          fill
+          className="object-contain"
+        />
+      </div>
+    ),
     features: [
       'Keynote Addresses',
       'Panel Discussions',
@@ -35,7 +48,11 @@ const subsidiaries = [
     title: 'Incuba8',
     subtitle: 'Innovation Incubator Program',
     description: 'A comprehensive incubator program providing holistic solutions to organizations. We offer strategic guidance and resources to help organizations thrive and scale their impact.',
-    icon: FaLightbulb,
+    logo: (
+      <div className="text-3xl font-bold font-display bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent tracking-wider">
+        INCUBA8
+      </div>
+    ),
     features: [
       'Strategic Guidance',
       'Resource Access',
@@ -48,7 +65,16 @@ const subsidiaries = [
     title: 'Shop Mammy',
     subtitle: 'Social Impact Marketplace',
     description: 'An innovative mobile platform connecting vendors and customers while enabling social cause donations. Making an impact with every transaction through our integrated donation system.',
-    icon: FaShoppingBag,
+    logo: (
+      <div className="relative w-12 h-12">
+        <Image
+          src="/shopmammy.png"
+          alt="Shop Mammy"
+          fill
+          className="object-contain"
+        />
+      </div>
+    ),
     features: [
       'Vendor Connections',
       'Social Donations',
@@ -105,8 +131,8 @@ export const Subsidiaries = () => {
               <div className="relative glass rounded-2xl p-8 h-full border border-white/5 transition-all duration-500 hover:border-white/20">
                 <div className="flex flex-col h-full">
                   <div className="flex items-center mb-6">
-                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${subsidiary.gradient} flex items-center justify-center text-white`}>
-                      <subsidiary.icon className="w-6 h-6" />
+                    <div className="flex items-center justify-center">
+                      {subsidiary.logo}
                     </div>
                     <div className="ml-4">
                       <h3 className="text-2xl font-bold font-display text-white group-hover:text-teacch-orange transition-colors duration-300">
