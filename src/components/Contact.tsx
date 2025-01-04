@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
@@ -9,26 +8,24 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 gsap.registerPlugin(ScrollTrigger);
 
 export const Contact = () => {
-  const [formState, setFormState] = useState({
+  const sectionRef = useRef(null);
+  const formRef = useRef(null);
+  const titleRef = useRef(null);
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
 
-  const sectionRef = useRef(null);
-  const formRef = useRef(null);
-  const titleRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formState);
+    console.log('Form submitted:', formData);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormState({
-      ...formState,
+    setFormData({
+      ...formData,
       [e.target.name]: e.target.value,
     });
   };
@@ -172,7 +169,7 @@ export const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  value={formState.name}
+                  value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg bg-dark-600 border border-white/5 focus:border-teacch-orange focus:ring-2 focus:ring-teacch-orange/20 transition-all duration-300 text-white"
                   placeholder="John Doe"
@@ -188,7 +185,7 @@ export const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formState.email}
+                  value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg bg-dark-600 border border-white/5 focus:border-teacch-orange focus:ring-2 focus:ring-teacch-orange/20 transition-all duration-300 text-white"
                   placeholder="john@example.com"
@@ -203,7 +200,7 @@ export const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formState.message}
+                  value={formData.message}
                   onChange={handleChange}
                   rows={6}
                   className="w-full px-4 py-3 rounded-lg bg-dark-600 border border-white/5 focus:border-teacch-orange focus:ring-2 focus:ring-teacch-orange/20 transition-all duration-300 text-white resize-none"
