@@ -142,7 +142,7 @@ export const Services = () => {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-dark-400 dark:text-gray-400 max-w-3xl mx-auto">
-            Comprehensive solutions designed to empower your business with cutting-edge technology and innovation.{' '}
+            Comprehensive solutions designed to empower your business with <br /> cutting-edge technology and innovation.{' '}
             <a 
               href="https://rate.teacch.co" 
               target="_blank" 

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,7 +104,7 @@ export const Contact = () => {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <form className="space-y-8">
+          <form ref={formRef} className="space-y-8" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-dark-500 dark:text-white mb-2">
@@ -114,8 +114,11 @@ export const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
+                  value={formData.name || ''}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg bg-light-600 dark:bg-dark-600 text-dark-500 dark:text-white border border-dark-500/5 dark:border-white/5 focus:outline-none focus:ring-2 focus:ring-teacch-orange/50"
                   placeholder="Your name"
+                  required
                 />
               </div>
               <div>
@@ -126,8 +129,11 @@ export const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
+                  value={formData.email || ''}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg bg-light-600 dark:bg-dark-600 text-dark-500 dark:text-white border border-dark-500/5 dark:border-white/5 focus:outline-none focus:ring-2 focus:ring-teacch-orange/50"
                   placeholder="Your email"
+                  required
                 />
               </div>
             </div>
@@ -138,9 +144,12 @@ export const Contact = () => {
               <textarea
                 id="message"
                 name="message"
+                value={formData.message || ''}
+                onChange={handleChange}
                 rows={6}
                 className="w-full px-4 py-3 rounded-lg bg-light-600 dark:bg-dark-600 text-dark-500 dark:text-white border border-dark-500/5 dark:border-white/5 focus:outline-none focus:ring-2 focus:ring-teacch-orange/50"
                 placeholder="Your message"
+                required
               ></textarea>
             </div>
             <div>
