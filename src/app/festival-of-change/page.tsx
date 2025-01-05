@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FaCalendarAlt, FaMapMarkerAlt, FaUsers, FaLightbulb, FaHandshake, FaGlobe, FaTimes } from 'react-icons/fa';
+import { FaCalendarAlt, FaMapMarkerAlt, FaUsers, FaLightbulb, FaHandshake, FaGlobe, FaTimes, FaMicrophone, FaGavel, FaPodcast, FaChartLine, FaComments } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import Footer from '@/components/Footer';
 
@@ -26,6 +26,45 @@ interface GalleryImage {
   title: string;
   description?: string;
 }
+
+const stats = [
+  {
+    number: '4',
+    label: 'Speakers',
+    Icon: FaMicrophone,
+    description: 'Industry experts sharing insights'
+  },
+  {
+    number: '3',
+    label: 'Judges',
+    Icon: FaGavel,
+    description: 'Distinguished panel of evaluators'
+  },
+  {
+    number: '100+',
+    label: 'Attendees',
+    Icon: FaUsers,
+    description: 'Passionate innovators and change-makers'
+  },
+  {
+    number: '4',
+    label: 'Keynotes',
+    Icon: FaPodcast,
+    description: 'Inspiring presentations'
+  },
+  {
+    number: '2',
+    label: 'Pitch Competitions',
+    Icon: FaChartLine,
+    description: 'Showcasing innovative solutions'
+  },
+  {
+    number: '1',
+    label: 'Panel Session',
+    Icon: FaComments,
+    description: 'In-depth discussions on key topics'
+  }
+];
 
 export default function FestivalOfChangePage() {
   const [isClient, setIsClient] = useState(false);
@@ -170,40 +209,108 @@ export default function FestivalOfChangePage() {
             )}
           </section>
 
+          <section className="relative py-24 bg-gradient-to-b from-light-100 to-light-200 dark:from-dark-500 dark:to-dark-600 overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-pattern opacity-5"></div>
+            
+            {/* Content */}
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
+                <span className="inline-block text-sm font-medium text-teacch-orange uppercase tracking-wider mb-4">
+                  FOC24 Impact
+                </span>
+                <h2 className="text-3xl md:text-5xl font-bold font-display text-dark-600 dark:text-white mb-6">
+                  Festival of Change
+                  <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                    2024 Statistics
+                  </span>
+                </h2>
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-white/5 dark:bg-dark-600/50 backdrop-blur-lg rounded-2xl p-8 border border-dark-200/10 dark:border-white/10 hover:border-teacch-orange/50 transition-all duration-300"
+                  >
+                    <div className="flex items-center justify-between mb-4">
+                      <motion.span
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
+                        className="text-4xl md:text-5xl font-bold text-teacch-orange"
+                      >
+                        {stat.number}
+                      </motion.span>
+                      <motion.div
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                        className="w-12 h-12 rounded-xl bg-teacch-orange/10 flex items-center justify-center"
+                      >
+                        <stat.Icon className="w-6 h-6 text-teacch-orange" />
+                      </motion.div>
+                    </div>
+                    <h3 className="text-xl font-bold text-dark-600 dark:text-white mb-2">
+                      {stat.label}
+                    </h3>
+                    <p className="text-dark-500 dark:text-gray-400">
+                      {stat.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute top-1/2 left-0 w-64 h-64 bg-teacch-green/30 rounded-full filter blur-3xl opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute bottom-0 right-0 w-96 h-96 bg-teacch-orange/30 rounded-full filter blur-3xl opacity-20 translate-x-1/2 translate-y-1/2"></div>
+            </div>
+          </section>
+
           {/* Impact Section */}
-          <section className="w-full py-32 bg-white dark:bg-dark-500">
+          <section className="w-full py-32 bg-light-100 dark:bg-dark-500">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-20">
                 <span className="inline-block text-sm md:text-base font-medium text-teacch-orange uppercase tracking-wider mb-4">
                   Our Impact
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
-                  Transforming Education
+                  The First Festival
                   <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
-                    One Story at a Time
+                    of Change
                   </span>
                 </h2>
-                <p className="text-lg md:text-xl text-dark-400 dark:text-gray-400 max-w-3xl mx-auto">
-                  The Festival of Change has become a catalyst for educational transformation in Nigeria, bringing together stakeholders to address critical challenges and implement innovative solutions.
+                <p className="text-lg md:text-xl text-dark-500 dark:text-gray-400 max-w-3xl mx-auto">
+                  The inaugural Festival of Change marked a historic milestone in Nigeria&apos;s educational landscape, bringing together key stakeholders to address critical challenges and spark innovative solutions.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
                   {
-                    number: '1000+',
+                    number: '100+',
                     label: 'Attendees',
-                    description: 'Education leaders, innovators, and stakeholders from across Africa',
+                    description: 'Education innovators and stakeholders from across Nigeria',
                   },
                   {
-                    number: '50+',
-                    label: 'Speakers',
-                    description: 'Industry experts sharing insights and best practices',
+                    number: '4',
+                    label: 'Keynote Speakers',
+                    description: 'Industry experts sharing transformative insights',
                   },
                   {
-                    number: '20+',
-                    label: 'Countries',
-                    description: 'Global representation and diverse perspectives',
+                    number: '2',
+                    label: 'Pitch Competitions',
+                    description: 'Showcasing innovative educational solutions',
                   },
                 ].map((stat, index) => (
                   <motion.div
@@ -212,7 +319,7 @@ export default function FestivalOfChangePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="text-center space-y-4"
+                    className="text-center space-y-4 bg-white/5 dark:bg-dark-600/50 backdrop-blur-lg p-8 rounded-2xl border border-dark-200/10 dark:border-white/10 hover:border-teacch-orange/50 transition-all duration-300"
                   >
                     <div className="text-4xl md:text-6xl font-bold text-teacch-orange">
                       {stat.number}
@@ -220,7 +327,7 @@ export default function FestivalOfChangePage() {
                     <div className="text-xl font-bold text-dark-600 dark:text-white">
                       {stat.label}
                     </div>
-                    <p className="text-dark-400 dark:text-gray-400">
+                    <p className="text-dark-500 dark:text-gray-400">
                       {stat.description}
                     </p>
                   </motion.div>
@@ -367,29 +474,31 @@ export default function FestivalOfChangePage() {
 
           {/* Lightbox */}
           {selectedImage && (
-            <div 
-              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-              onClick={() => setSelectedImage(null)}
-            >
-              <div className="relative max-w-7xl w-full max-h-[90vh] flex items-center justify-center">
-                <button
-                  onClick={() => setSelectedImage(null)}
-                  className="absolute top-4 right-4 text-white hover:text-teacch-orange transition-colors duration-300 z-10"
-                >
-                  <FaTimes className="w-6 h-6" />
-                </button>
-                <div className="relative w-full h-full max-h-[80vh]">
-                  <Image
-                    src={selectedImage.url}
-                    alt={selectedImage.title}
-                    fill
-                    className="object-contain"
-                    sizes="100vw"
-                    priority
-                  />
+            <ClientOnly>
+              <div 
+                className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+                onClick={() => setSelectedImage(null)}
+              >
+                <div className="relative max-w-7xl w-full max-h-[90vh] flex items-center justify-center">
+                  <button
+                    onClick={() => setSelectedImage(null)}
+                    className="absolute top-4 right-4 text-white hover:text-teacch-orange transition-colors duration-300 z-10"
+                  >
+                    <FaTimes className="w-6 h-6" />
+                  </button>
+                  <div className="relative w-full h-full max-h-[80vh]">
+                    <Image
+                      src={selectedImage.url}
+                      alt={selectedImage.title}
+                      fill
+                      className="object-contain"
+                      sizes="100vw"
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+            </ClientOnly>
           )}
 
           {/* FOC 2025 Preview */}
