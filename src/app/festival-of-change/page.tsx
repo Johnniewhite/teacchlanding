@@ -106,20 +106,24 @@ export default function FestivalOfChangePage() {
     <div>
       <ClientOnly>
         <main className="flex min-h-screen flex-col">
-          {/* Hero Section with Image Background */}
+          {/* Hero Section with Video Background */}
           <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Image Background */}
+            {/* Video Background */}
             <div className="absolute inset-0 w-full h-full">
               <div className="absolute inset-0 bg-gradient-to-b from-dark-500/90 via-dark-500/85 to-dark-500/90 z-10"></div>
-              {isClient && images.length > 0 && (
-                <Image
-                  src={images[0].url}
-                  alt="Festival of Change Hero"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              )}
+              <ClientOnly>
+                <div className="absolute inset-0">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="/video/foc24.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </ClientOnly>
             </div>
 
             {/* Content */}
