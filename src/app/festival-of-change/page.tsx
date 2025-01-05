@@ -111,7 +111,7 @@ export default function FestivalOfChangePage() {
             {/* Video Background */}
             <div className="absolute inset-0 w-full h-full">
               <div className="absolute inset-0 bg-gradient-to-b from-dark-500/90 via-dark-500/85 to-dark-500/90 z-10"></div>
-              <ClientOnly>
+              {isClient && (
                 <div className="absolute inset-0">
                   <video
                     autoPlay
@@ -123,7 +123,7 @@ export default function FestivalOfChangePage() {
                     <source src="/video/foc24.mp4" type="video/mp4" />
                   </video>
                 </div>
-              </ClientOnly>
+              )}
             </div>
 
             {/* Content */}
