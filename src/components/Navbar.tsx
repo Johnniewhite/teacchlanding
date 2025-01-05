@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -49,10 +50,17 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold font-display bg-gradient-to-r from-teacch-green to-teacch-orange bg-clip-text text-transparent">
-              TEACCH
-            </span>
+          <a href="#" className="flex items-center">
+            <div className="relative w-28 h-12 sm:w-32 sm:h-14">
+              <Image
+                src="/logo.png"
+                alt="Teacch Logo"
+                fill
+                priority
+                className="object-contain dark:brightness-[1.15] dark:contrast-[1.1]"
+                sizes="(max-width: 640px) 112px, 128px"
+              />
+            </div>
           </a>
 
           {/* Desktop Navigation */}

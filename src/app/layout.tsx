@@ -27,9 +27,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`${spaceGrotesk.variable} ${syne.variable} font-body overflow-x-hidden w-screen min-h-screen bg-light-500 text-dark-500 dark:bg-dark-500 dark:text-white transition-colors duration-300`}>
+      <body className={`${spaceGrotesk.variable} ${syne.variable} font-body overflow-x-hidden w-full max-w-[100vw] min-h-screen bg-light-500 text-dark-500 dark:bg-dark-500 dark:text-white transition-colors duration-300`}>
         <Navbar />
-        {children}
+        <main className="relative w-full">
+          {children}
+        </main>
       </body>
     </html>
   );

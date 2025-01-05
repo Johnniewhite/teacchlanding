@@ -123,26 +123,26 @@ export const Services = () => {
   }, []);
 
   return (
-    <section className="relative py-32 w-full bg-light-500 dark:bg-dark-500 overflow-hidden" id="services" ref={sectionRef}>
+    <section className="relative py-32 w-full overflow-hidden bg-light-500 dark:bg-dark-500" id="services" ref={sectionRef}>
       {/* Enhanced Background Pattern */}
-      <div className="absolute inset-0 w-full">
-        <div className="absolute inset-0 w-full bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] opacity-5"></div>
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] opacity-5"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-light-500 via-light-500/95 to-light-500 dark:from-dark-500 dark:via-dark-500/95 dark:to-dark-500"></div>
       </div>
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20" ref={titleRef}>
+        <div className="text-center mb-20 max-w-[90%] sm:max-w-full mx-auto" ref={titleRef}>
           <span className="inline-block text-sm md:text-base font-medium text-teacch-orange uppercase tracking-wider mb-4">
             Our Services
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-dark-500 dark:text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-dark-500 dark:text-white break-words">
             Transforming Ideas into{' '}
             <span className="text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
               Reality
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-dark-400 dark:text-gray-400 max-w-3xl mx-auto">
-            Comprehensive solutions designed to empower your business with <br /> cutting-edge technology and innovation.{' '}
+          <p className="text-lg md:text-xl text-dark-400 dark:text-gray-400 max-w-3xl mx-auto px-2">
+            Comprehensive solutions designed to empower your business with cutting-edge technology and innovation.{' '}
             <a 
               href="https://rate.teacch.co" 
               target="_blank" 
@@ -154,7 +154,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 lg:gap-12 max-w-[95%] mx-auto sm:max-w-full">
           {services.map((service, index) => (
             <div
               key={service.title}

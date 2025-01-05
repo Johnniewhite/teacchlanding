@@ -10,7 +10,7 @@ const subsidiaries = [
     subtitle: 'The Education Development Circle',
     description: 'Empowering social innovators with essential knowledge and advanced skills for creating sustainable solutions. Our program focuses on building entrepreneurial solutions driven by passion for change.',
     logo: (
-      <div className="text-2xl font-bold font-display bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent">
+      <div className="text-xl sm:text-2xl font-bold font-display bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent">
         The Education Development Circle
       </div>
     ),
@@ -27,13 +27,10 @@ const subsidiaries = [
     subtitle: 'Annual Innovation Conference',
     description: 'A transformative conference responding to global education challenges. We bring together thought leaders, innovators, and change-makers to generate bold ideas and inspire action.',
     logo: (
-      <div className="relative w-48 h-12">
-        <Image
-          src="/foc.png"
-          alt="Festival of Change"
-          fill
-          className="object-contain"
-        />
+      <div className="text-xl sm:text-2xl font-bold font-display">
+        <span className="bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent">Festival</span>
+        <span className="text-teacch-orange mx-1 sm:mx-2">OF</span>
+        <span className="bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent">Change</span>
       </div>
     ),
     features: [
@@ -49,7 +46,7 @@ const subsidiaries = [
     subtitle: 'Innovation Incubator Program',
     description: 'A comprehensive incubator program providing holistic solutions to organizations. We offer strategic guidance and resources to help organizations thrive and scale their impact.',
     logo: (
-      <div className="text-3xl font-bold font-display bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent tracking-wider">
+      <div className="text-2xl sm:text-3xl font-bold font-display bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent tracking-wider">
         INCUBA8
       </div>
     ),
@@ -128,30 +125,30 @@ export const Subsidiaries = () => {
               className="group relative"
             >
               <div className={`absolute inset-0 bg-gradient-to-r ${subsidiary.gradient} opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-500 -z-10`}></div>
-              <div className="relative glass rounded-2xl p-8 h-full border border-dark-500/5 dark:border-white/5 bg-light-600/50 dark:bg-dark-600/50 backdrop-blur-xl transition-all duration-500 hover:border-teacch-orange/20">
+              <div className="relative glass rounded-2xl p-4 sm:p-8 h-full border border-dark-500/5 dark:border-white/5 bg-light-600/50 dark:bg-dark-600/50 backdrop-blur-xl transition-all duration-500 hover:border-teacch-orange/20">
                 <div className="flex flex-col h-full">
-                  <div className="flex items-center mb-6">
-                    <div className="flex items-center justify-center">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center mb-6">
+                    <div className="flex items-center justify-center mb-3 sm:mb-0">
                       {subsidiary.logo}
                     </div>
-                    <div className="ml-4">
-                      <h3 className="text-2xl font-bold font-display text-dark-500 dark:text-white group-hover:text-teacch-orange transition-colors duration-300">
+                    <div className="sm:ml-4">
+                      <h3 className="text-xl sm:text-2xl font-bold font-display text-dark-500 dark:text-white group-hover:text-teacch-orange transition-colors duration-300">
                         {subsidiary.title}
                       </h3>
                       <p className="text-sm text-dark-400 dark:text-gray-400">{subsidiary.subtitle}</p>
                     </div>
                   </div>
-                  <p className="text-dark-400 dark:text-gray-400 mb-6 group-hover:text-dark-500 dark:group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="text-base sm:text-lg text-dark-400 dark:text-gray-400 mb-6 group-hover:text-dark-500 dark:group-hover:text-gray-300 transition-colors duration-300">
                     {subsidiary.description}
                   </p>
-                  <div className="grid grid-cols-2 gap-4 mt-auto">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-auto">
                     {subsidiary.features.map((feature) => (
                       <div
                         key={feature}
                         className="flex items-center space-x-2 text-sm text-dark-400 dark:text-gray-400"
                       >
-                        <div className="w-1.5 h-1.5 rounded-full bg-teacch-orange"></div>
-                        <span>{feature}</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-teacch-orange flex-shrink-0"></div>
+                        <span className="flex-1">{feature}</span>
                       </div>
                     ))}
                   </div>
