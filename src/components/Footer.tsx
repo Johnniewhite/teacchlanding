@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 const navigation = {
   main: [
     { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
     { href: '/ted-circle', label: 'TED Circle' },
     { href: '/festival-of-change', label: 'Festival of Change' },
     { href: '/incuba8', label: 'Incuba8' },

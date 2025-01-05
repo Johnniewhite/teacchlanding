@@ -80,7 +80,7 @@ export const Hero = () => {
                 visible: { opacity: 1, y: 0 }
               }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-display mb-4 sm:mb-8 text-white leading-[1.1] tracking-tight break-words"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-8xl font-bold font-display mb-4 sm:mb-8 text-white leading-[1.1] tracking-tight break-words"
             >
               <span className="inline">Empowering{' '}</span>
               <span className="relative inline-block">
