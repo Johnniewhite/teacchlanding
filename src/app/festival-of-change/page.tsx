@@ -46,11 +46,8 @@ export default function FestivalOfChangePage() {
       const response = await fetch('https://teacch-images.vercel.app/images');
       const data = await response.json();
       
-      // Check if data is an object with images property
-      const imageUrls = Array.isArray(data) ? data : Object.values(data);
-      
-      if (imageUrls.length > 0) {
-        setImages(imageUrls.map((url: string) => ({
+      if (data && data.images && Array.isArray(data.images)) {
+        setImages(data.images.map((url: string) => ({
           url,
           title: 'Festival of Change 2024',
           description: 'Moments from FOC 2024'
@@ -70,21 +67,19 @@ export default function FestivalOfChangePage() {
   return (
     <ClientOnly>
       <main className="flex min-h-screen flex-col">
-        {/* Hero Section with Video Background */}
+        {/* Hero Section with Image Background */}
         <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
-          {/* Video Background */}
+          {/* Image Background */}
           <div className="absolute inset-0 w-full h-full">
             <div className="absolute inset-0 bg-gradient-to-b from-dark-500/90 via-dark-500/85 to-dark-500/90 z-10"></div>
-            {isClient && (
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source src="/videos/foc-hero.mp4" type="video/mp4" />
-              </video>
+            {isClient && images.length > 0 && (
+              <Image
+                src={images[0].url}
+                alt="Festival of Change Hero"
+                fill
+                className="object-cover"
+                priority
+              />
             )}
           </div>
 
