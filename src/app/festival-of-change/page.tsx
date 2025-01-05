@@ -103,7 +103,7 @@ export default function FestivalOfChangePage() {
   };
 
   return (
-    <div suppressHydrationWarning>
+    <div>
       <ClientOnly>
         <main className="flex min-h-screen flex-col">
           {/* Hero Section with Image Background */}
@@ -425,7 +425,7 @@ export default function FestivalOfChangePage() {
                   <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-teacch-orange"></div>
                 </div>
               ) : (
-                <>
+                <ClientOnly>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {images.slice(0, page * imagesPerPage).map((image, index) => (
                       <motion.div
@@ -467,7 +467,7 @@ export default function FestivalOfChangePage() {
                       </motion.button>
                     </div>
                   )}
-                </>
+                </ClientOnly>
               )}
             </div>
           </section>
