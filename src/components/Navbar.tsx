@@ -4,19 +4,24 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#services', label: 'Services' },
-  { href: '#values', label: 'Values' },
-  { href: '#subsidiaries', label: 'Initiatives' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/ted-circle', label: 'TED Circle' },
+  { href: '/festival-of-change', label: 'Festival of Change' },
+  { href: '/incuba8', label: 'Incuba8' },
+  { href: '/shop-mammy', label: 'Shop Mammy' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +55,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <div className="relative w-28 h-12 sm:w-32 sm:h-14">
               <Image
                 src="/logo.png"
@@ -61,18 +66,20 @@ export const Navbar = () => {
                 sizes="(max-width: 640px) 112px, 128px"
               />
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
-                className="text-dark-500 dark:text-gray-300 hover:text-teacch-orange dark:hover:text-teacch-orange transition-colors duration-300"
+                className={`text-dark-500 dark:text-gray-300 hover:text-teacch-orange dark:hover:text-teacch-orange transition-colors duration-300 ${
+                  pathname === link.href ? 'text-teacch-orange dark:text-teacch-orange font-medium' : ''
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
@@ -109,14 +116,16 @@ export const Navbar = () => {
       >
         <div className="px-4 pt-2 pb-4 bg-light-500/95 dark:bg-dark-500/95 backdrop-blur-xl border-b border-dark-500/5 dark:border-white/5">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="block py-3 text-dark-500 dark:text-gray-300 hover:text-teacch-orange dark:hover:text-teacch-orange transition-colors duration-300"
+              className={`block py-3 text-dark-500 dark:text-gray-300 hover:text-teacch-orange dark:hover:text-teacch-orange transition-colors duration-300 ${
+                pathname === link.href ? 'text-teacch-orange dark:text-teacch-orange font-medium' : ''
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
       </motion.div>
