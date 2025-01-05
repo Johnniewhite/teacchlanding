@@ -3,9 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FaCalendarAlt, FaMapMarkerAlt, FaUsers, FaLightbulb, FaHandshake, FaGlobe, FaTimes } from 'react-icons/fa';
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 
 // Create a client-side only wrapper component
 const ClientOnly = ({ children }: { children: React.ReactNode }) => {
@@ -101,7 +99,7 @@ export default function FestivalOfChangePage() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-                Join Africa's largest gathering of education innovators, thought leaders, and change-makers as we reimagine the future of education.
+                Join Africa&apos;s largest gathering of education innovators, thought leaders, and change-makers as we reimagine the future of education.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8">
                 <motion.a
@@ -253,7 +251,7 @@ export default function FestivalOfChangePage() {
                 className="relative h-[400px] rounded-2xl overflow-hidden"
               >
                 <Image
-                  src="/images/foc-2024.jpg"
+                  src="https://res.cloudinary.com/dii1mpzje/image/upload/v1727386016/foc/lagossstech_47of458.jpg"
                   alt="Festival of Change 2024"
                   fill
                   className="object-cover"
@@ -267,7 +265,7 @@ export default function FestivalOfChangePage() {
                 className="space-y-6"
               >
                 <p className="text-lg text-dark-400 dark:text-gray-400">
-                  The 2024 Festival of Change brought together experts who charted paths to reviving Nigeria's education sector. Key discussions centered around innovative approaches to address challenges in the educational system, including:
+                  The 2024 Festival of Change brought together experts who charted paths to reviving Nigeria&apos;s education sector. Key discussions centered around innovative approaches to address challenges in the educational system, including:
                 </p>
                 <ul className="space-y-4">
                   {[
