@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const subsidiaries = [
   {
@@ -21,6 +22,7 @@ const subsidiaries = [
       'Pitch Development',
     ],
     gradient: 'from-teacch-green to-emerald-500',
+    href: '/ted-circle'
   },
   {
     title: 'Festival of Change',
@@ -40,6 +42,7 @@ const subsidiaries = [
       'Strategic Partnerships',
     ],
     gradient: 'from-teacch-orange to-amber-500',
+    href: '/festival-of-change'
   },
   {
     title: 'Incuba8',
@@ -57,6 +60,7 @@ const subsidiaries = [
       'Impact Scaling',
     ],
     gradient: 'from-purple-500 to-indigo-500',
+    href: '/incuba8'
   },
   {
     title: 'Shop Mammy',
@@ -79,6 +83,7 @@ const subsidiaries = [
       'Community Building',
     ],
     gradient: 'from-pink-500 to-rose-500',
+    href: '/shop-mammy'
   },
 ];
 
@@ -117,44 +122,49 @@ export const Subsidiaries = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {subsidiaries.map((subsidiary, index) => (
-            <motion.div
+            <Link
               key={subsidiary.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group relative"
+              href={subsidiary.href}
+              className="group relative block"
             >
-              <div className={`absolute inset-0 bg-gradient-to-r ${subsidiary.gradient} opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-500 -z-10`}></div>
-              <div className="relative glass rounded-2xl p-4 sm:p-8 h-full border border-dark-500/5 dark:border-white/5 bg-light-600/50 dark:bg-dark-600/50 backdrop-blur-xl transition-all duration-500 hover:border-teacch-orange/20">
-                <div className="flex flex-col h-full">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center mb-6">
-                    <div className="flex items-center justify-center mb-3 sm:mb-0">
-                      {subsidiary.logo}
-                    </div>
-                    <div className="sm:ml-4">
-                      <h3 className="text-xl sm:text-2xl font-bold font-display text-dark-500 dark:text-white group-hover:text-teacch-orange transition-colors duration-300">
-                        {subsidiary.title}
-                      </h3>
-                      <p className="text-sm text-dark-400 dark:text-gray-400">{subsidiary.subtitle}</p>
-                    </div>
-                  </div>
-                  <p className="text-base sm:text-lg text-dark-400 dark:text-gray-400 mb-6 group-hover:text-dark-500 dark:group-hover:text-gray-300 transition-colors duration-300">
-                    {subsidiary.description}
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-auto">
-                    {subsidiary.features.map((feature) => (
-                      <div
-                        key={feature}
-                        className="flex items-center space-x-2 text-sm text-dark-400 dark:text-gray-400"
-                      >
-                        <div className="w-1.5 h-1.5 rounded-full bg-teacch-orange flex-shrink-0"></div>
-                        <span className="flex-1">{feature}</span>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="h-full"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-r ${subsidiary.gradient} opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-500 -z-10`}></div>
+                <div className="relative glass rounded-2xl p-4 sm:p-8 h-full border border-dark-500/5 dark:border-white/5 bg-light-600/50 dark:bg-dark-600/50 backdrop-blur-xl transition-all duration-500 hover:border-teacch-orange/20">
+                  <div className="flex flex-col h-full">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center mb-6">
+                      <div className="flex items-center justify-center mb-3 sm:mb-0">
+                        {subsidiary.logo}
                       </div>
-                    ))}
+                      <div className="sm:ml-4">
+                        <h3 className="text-xl sm:text-2xl font-bold font-display text-dark-500 dark:text-white group-hover:text-teacch-orange transition-colors duration-300">
+                          {subsidiary.title}
+                        </h3>
+                        <p className="text-sm text-dark-400 dark:text-gray-400">{subsidiary.subtitle}</p>
+                      </div>
+                    </div>
+                    <p className="text-base sm:text-lg text-dark-400 dark:text-gray-400 mb-6 group-hover:text-dark-500 dark:group-hover:text-gray-300 transition-colors duration-300">
+                      {subsidiary.description}
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-auto">
+                      {subsidiary.features.map((feature) => (
+                        <div
+                          key={feature}
+                          className="flex items-center space-x-2 text-sm text-dark-400 dark:text-gray-400"
+                        >
+                          <div className="w-1.5 h-1.5 rounded-full bg-teacch-orange flex-shrink-0"></div>
+                          <span className="flex-1">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </div>
 
