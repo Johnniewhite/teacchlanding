@@ -30,7 +30,7 @@ export default function ShopMammyPage() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section className="relative w-full min-h-screen overflow-hidden">
         {/* Hero Content */}
