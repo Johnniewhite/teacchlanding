@@ -272,7 +272,7 @@ export default function AboutPage() {
                         Our Mission
                       </h3>
                       <p className="text-lg text-dark-400 dark:text-gray-400">
-                        To raise creative intellectuals who are bridging gaps in social innovation, unlocking the potential of young African minds to create sustainable change.
+                        To raise creative intellectuals who are bridging gaps in social innovation.
                       </p>
                     </motion.div>
 
@@ -284,7 +284,7 @@ export default function AboutPage() {
                         Our Vision
                       </h3>
                       <p className="text-lg text-dark-400 dark:text-gray-400">
-                        To unlock the creative and intellectual capital of young Africans by 2050, fostering a generation of innovators who will drive sustainable change across the continent.
+                        To unlock the creative and intellectual capital of young Africans by 2050, who will drive sustainable change across the continent.
                       </p>
                     </motion.div>
                   </div>
