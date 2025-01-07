@@ -8,7 +8,7 @@ import Link from 'next/link';
 const subsidiaries = [
   {
     title: 'TED Circle',
-    subtitle: 'The Education Development Circle',
+    subtitle: 'Social Innovation Program',
     description: 'Empowering social innovators with essential knowledge and advanced skills for creating sustainable solutions. Our program focuses on building entrepreneurial solutions driven by passion for change.',
     logo: (
       <div className="text-xl sm:text-2xl font-bold font-display bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent">
