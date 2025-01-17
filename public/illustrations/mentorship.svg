@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <path d="M0 0h800v600H0z" fill="#F8FAFC"/>
+  <path d="M50 50h700v500H50z" fill="#EFF6FF" rx="20"/>
+  
+  <!-- Mentor Figure -->
+  <g class="mentor">
+    <!-- Body -->
+    <path d="M300 200c0 44.18-35.82 80-80 80s-80-35.82-80-80 35.82-80 80-80 80 35.82 80 80z" fill="#3B82F6"/>
+    <path d="M300 400v-60c0-44.18-35.82-80-80-80s-80 35.82-80 80v60h160z" fill="#3B82F6"/>
+    
+    <!-- Wisdom Aura -->
+    <circle cx="220" cy="200" r="100" stroke="#93C5FD" stroke-width="2" stroke-dasharray="8 8">
+      <animateTransform attributeName="transform" type="rotate" from="0 220 200" to="360 220 200" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="220" cy="200" r="120" stroke="#93C5FD" stroke-width="2" stroke-dasharray="8 8">
+      <animateTransform attributeName="transform" type="rotate" from="360 220 200" to="0 220 200" dur="25s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Mentee Figure -->
+  <g class="mentee">
+    <!-- Body -->
+    <path d="M600 250c0 33.14-26.86 60-60 60s-60-26.86-60-60 26.86-60 60-60 60 26.86 60 60z" fill="#60A5FA"/>
+    <path d="M600 400v-45c0-33.14-26.86-60-60-60s-60 26.86-60 60v45h120z" fill="#60A5FA"/>
+    
+    <!-- Learning Indicators -->
+    <g class="learning-symbols">
+      <circle cx="540" cy="180" r="15" fill="none" stroke="#93C5FD" stroke-width="2">
+        <animate attributeName="r" values="15;20;15" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="1;0.2;1" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="540" cy="180" r="25" fill="none" stroke="#93C5FD" stroke-width="2">
+        <animate attributeName="r" values="25;30;25" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Knowledge Transfer -->
+  <g class="knowledge-transfer">
+    <!-- Connection Path -->
+    <path d="M300 200c100-20 200-20 240 50" stroke="#93C5FD" stroke-width="4" stroke-dasharray="8 8">
+      <animate attributeName="stroke-dashoffset" values="16;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Floating Elements -->
+    <g class="floating-elements">
+      <!-- Books -->
+      <path d="M350 180l30-10v40l-30-10v-20z" fill="#2563EB">
+        <animate attributeName="transform" type="translate" values="0,0;0,10;0,0" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <!-- Lightbulbs -->
+      <circle cx="400" cy="160" r="8" fill="#60A5FA">
+        <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Stars -->
+      <path d="M450 170l10-10l10 10l-10 10z" fill="#3B82F6">
+        <animate attributeName="transform" type="rotate" values="0 460 170;360 460 170" dur="4s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  
+  <!-- Growth Path -->
+  <g class="growth-path">
+    <path d="M320 300c80-40 160-40 200 0" stroke="#BFDBFE" stroke-width="20" stroke-linecap="round"/>
+    <path d="M320 300c80-40 160-40 200 0" stroke="#60A5FA" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8">
+      <animate attributeName="stroke-dashoffset" values="16;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Milestone Markers -->
+    <circle cx="370" cy="280" r="6" fill="#2563EB"/>
+    <circle cx="420" cy="260" r="6" fill="#2563EB"/>
+    <circle cx="470" cy="260" r="6" fill="#2563EB"/>
+    <circle cx="520" cy="280" r="6" fill="#2563EB"/>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <g class="decorative" opacity="0.2">
+    <circle cx="100" cy="100" r="20" stroke="#3B82F6" stroke-width="2" fill="none"/>
+    <circle cx="700" cy="500" r="20" stroke="#3B82F6" stroke-width="2" fill="none"/>
+    <path d="M120 120l-40-40M680 480l40 40" stroke="#3B82F6" stroke-width="2"/>
+  </g>
+  
+  <!-- Gradient Overlays -->
+  <defs>
+    <linearGradient id="mentor-glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="50" y="50" width="700" height="500" rx="20" fill="url(#mentor-glow)"/>
+</svg> 

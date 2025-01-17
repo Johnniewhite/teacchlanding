@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <path d="M0 0h800v600H0z" fill="#F8FAFC"/>
+  <path d="M50 50h700v500H50z" fill="#FEF3C7" rx="20"/>
+  
+  <!-- Main Expert Figure -->
+  <g class="expert">
+    <!-- Head and Shoulders -->
+    <path d="M400 150c44.18 0 80 35.82 80 80s-35.82 80-80 80-80-35.82-80-80 35.82-80 80-80z" fill="#F59E0B"/>
+    <path d="M320 400v-60c0-44.18 35.82-80 80-80s80 35.82 80 80v60H320z" fill="#F59E0B"/>
+    
+    <!-- Graduation Cap -->
+    <path d="M360 150l40-30 40 30-40 30-40-30z" fill="#2563EB"/>
+    <path d="M400 180v-30l40-30v40l-40 20z" fill="#1D4ED8"/>
+    <rect x="390" y="120" width="20" height="40" fill="#3B82F6"/>
+  </g>
+  
+  <!-- Audience Figures -->
+  <g class="audience" opacity="0.8">
+    <!-- Left Figure -->
+    <circle cx="200" cy="300" r="40" fill="#60A5FA"/>
+    <path d="M160 450v-50c0-22.09 17.91-40 40-40s40 17.91 40 40v50H160z" fill="#60A5FA"/>
+    
+    <!-- Right Figure -->
+    <circle cx="600" cy="300" r="40" fill="#60A5FA"/>
+    <path d="M560 450v-50c0-22.09 17.91-40 40-40s40 17.91 40 40v50H560z" fill="#60A5FA"/>
+  </g>
+  
+  <!-- Knowledge Transfer Elements -->
+  <g class="knowledge-transfer">
+    <!-- Connection Lines -->
+    <path d="M280 300c40-20 160-20 240 0" stroke="#3B82F6" stroke-width="4" stroke-dasharray="8 8">
+      <animate attributeName="stroke-dashoffset" values="16;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Floating Symbols -->
+    <g class="symbols">
+      <!-- Mathematical -->
+      <path d="M300 250l20-20M300 230l20 20" stroke="#2563EB" stroke-width="3">
+        <animate attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="3s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Scientific -->
+      <circle cx="380" cy="220" r="15" stroke="#1D4ED8" stroke-width="3" fill="none">
+        <animate attributeName="r" values="15;18;15" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Code -->
+      <path d="M460 250l-20 20M460 270l20-20" stroke="#3B82F6" stroke-width="3">
+        <animate attributeName="transform" type="translate" values="0,0; 0,10; 0,0" dur="2.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <g class="decorative" opacity="0.2">
+    <circle cx="100" cy="100" r="20" stroke="#F59E0B" stroke-width="2" fill="none"/>
+    <circle cx="700" cy="500" r="20" stroke="#F59E0B" stroke-width="2" fill="none"/>
+    <path d="M150 550l-30-30M650 50l30 30" stroke="#F59E0B" stroke-width="2"/>
+  </g>
+  
+  <!-- Gradient Overlays -->
+  <defs>
+    <linearGradient id="expertise" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="50" y="50" width="700" height="500" rx="20" fill="url(#expertise)"/>
+</svg> 

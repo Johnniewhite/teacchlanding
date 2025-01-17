@@ -5,21 +5,7 @@ import Image from 'next/image';
 import { FaCalendarAlt, FaMapMarkerAlt, FaUsers, FaLightbulb, FaHandshake, FaGlobe, FaTimes, FaMicrophone, FaGavel, FaPodcast, FaChartLine, FaComments } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import Footer from '@/components/Footer';
-
-// Create a client-side only wrapper component with suppressHydrationWarning
-const ClientOnly = ({ children }: { children: React.ReactNode }) => {
-  const [hasMounted, setHasMounted] = useState(false);
-
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
-  if (!hasMounted) {
-    return null;
-  }
-
-  return <div suppressHydrationWarning>{children}</div>;
-};
+import ClientOnly from '@/components/ClientOnly';
 
 interface GalleryImage {
   url: string;

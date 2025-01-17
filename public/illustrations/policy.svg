@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  
+  <!-- Document -->
+  <path d="M300 150H500V450H300V150Z" fill="white" stroke="#4B5563" stroke-width="4"/>
+  <path d="M350 200H450M350 250H450M350 300H450M350 350H450" stroke="#4B5563" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Gavel -->
+  <path d="M500 250L600 150M580 130L620 170L580 210L540 170L580 130Z" fill="#4B5563" stroke="#374151" stroke-width="4"/>
+  <rect x="480" y="230" width="40" height="160" rx="5" transform="rotate(45 480 230)" fill="#4B5563"/>
+  
+  <!-- Scales -->
+  <path d="M200 300V400M150 400H250" stroke="#4B5563" stroke-width="4"/>
+  <circle cx="200" cy="250" r="30" fill="white" stroke="#4B5563" stroke-width="4"/>
+  <path d="M170 400C170 389.507 178.507 381 189 381H211C221.493 381 230 389.507 230 400H170Z" fill="white" stroke="#4B5563" stroke-width="4"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="400" cy="300" r="150" stroke="#E5E7EB" stroke-width="4" stroke-dasharray="4 4"/>
+</svg>

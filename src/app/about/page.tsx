@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { FaLightbulb, FaHandshake, FaGlobe, FaHeart, FaStar, FaBalanceScale, FaChevronRight } from 'react-icons/fa';
 import { HiOutlineAcademicCap, HiOutlineLightBulb, HiOutlineGlobe } from 'react-icons/hi';
 import Footer from '@/components/Footer';
+import ClientOnly from '@/components/ClientOnly';
 
 
 // Initiatives data
@@ -44,21 +45,6 @@ const initiatives = [
     ]
   }
 ];
-
-// Create a client-side only wrapper component with suppressHydrationWarning
-const ClientOnly = ({ children }: { children: React.ReactNode }) => {
-  const [hasMounted, setHasMounted] = useState(false);
-
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
-  if (!hasMounted) {
-    return null;
-  }
-
-  return <div suppressHydrationWarning>{children}</div>;
-};
 
 export default function AboutPage() {
   const [mounted, setMounted] = useState(false);
@@ -139,7 +125,7 @@ export default function AboutPage() {
             >
               <div className="absolute inset-0 bg-gradient-to-b from-dark-500/95 via-dark-500/90 to-dark-500/95 z-10"></div>
               <Image
-                src="/images/team.jpeg"
+                src="/images/team2.jpg"
                 alt="TEACCH Impact"
                 fill
                 className="object-cover"
@@ -498,7 +484,7 @@ export default function AboutPage() {
                   className="relative h-[600px] rounded-2xl overflow-hidden"
                 >
                   <Image
-                    src="/images/team.jpeg"
+                    src="/images/team2.jpg"
                     alt="TEACCH Journey"
                     fill
                     className="object-cover"

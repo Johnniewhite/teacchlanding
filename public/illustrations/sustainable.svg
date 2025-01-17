@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <path d="M0 0h800v600H0z" fill="#F8FAFC"/>
+  <path d="M50 50h700v500H50z" fill="#ECFDF5" rx="20"/>
+  
+  <!-- Earth and Environment -->
+  <g class="earth">
+    <!-- Globe Base -->
+    <circle cx="400" cy="300" r="120" fill="#34D399" stroke="#059669" stroke-width="4"/>
+    
+    <!-- Continents -->
+    <path d="M320 240c20-30 80-40 120-20s60 60 40 100-80 40-120 20-60-60-40-100z" fill="#047857"/>
+    <path d="M380 320c30-20 70-10 90 20s10 70-20 90-70 10-90-20-10-70 20-90z" fill="#047857"/>
+    
+    <!-- Orbit Lines -->
+    <circle cx="400" cy="300" r="140" stroke="#6EE7B7" stroke-width="2" stroke-dasharray="8 8">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 300" to="360 400 300" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="300" r="160" stroke="#6EE7B7" stroke-width="2" stroke-dasharray="8 8">
+      <animateTransform attributeName="transform" type="rotate" from="360 400 300" to="0 400 300" dur="30s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Growing Elements -->
+  <g class="nature">
+    <!-- Tree 1 -->
+    <g transform="translate(200,400)">
+      <path d="M-20 0c20-40 60-40 80 0l-40 -80z" fill="#059669">
+        <animate attributeName="d" values="M-20 0c20-40 60-40 80 0l-40 -80z;M-20 0c20-50 60-50 80 0l-40 -90z;M-20 0c20-40 60-40 80 0l-40 -80z" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <rect x="-5" y="0" width="10" height="40" fill="#047857"/>
+    </g>
+    
+    <!-- Tree 2 -->
+    <g transform="translate(600,400)">
+      <path d="M-20 0c20-40 60-40 80 0l-40 -80z" fill="#059669">
+        <animate attributeName="d" values="M-20 0c20-40 60-40 80 0l-40 -80z;M-20 0c20-50 60-50 80 0l-40 -90z;M-20 0c20-40 60-40 80 0l-40 -80z" dur="3.5s" repeatCount="indefinite"/>
+      </path>
+      <rect x="-5" y="0" width="10" height="40" fill="#047857"/>
+    </g>
+    
+    <!-- Growing Plant -->
+    <g transform="translate(400,450)">
+      <!-- Stem -->
+      <path d="M0 0c0-30 0-60 0-90" stroke="#047857" stroke-width="4">
+        <animate attributeName="d" values="M0 0c0-30 0-60 0-90;M0 0c0-40 0-80 0-120;M0 0c0-30 0-60 0-90" dur="4s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Leaves -->
+      <path d="M0 -40c-20-10-20-30 0-40 20 10 20 30 0 40" fill="#34D399">
+        <animate attributeName="d" values="M0 -40c-20-10-20-30 0-40 20 10 20 30 0 40;M0 -60c-25-15-25-35 0-45 25 15 25 35 0 45;M0 -40c-20-10-20-30 0-40 20 10 20 30 0 40" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <path d="M0 -60c-20-10-20-30 0-40 20 10 20 30 0 40" fill="#34D399" transform="rotate(60)">
+        <animate attributeName="d" values="M0 -60c-20-10-20-30 0-40 20 10 20 30 0 40;M0 -80c-25-15-25-35 0-45 25 15 25 35 0 45;M0 -60c-20-10-20-30 0-40 20 10 20 30 0 40" dur="3.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M0 -60c-20-10-20-30 0-40 20 10 20 30 0 40" fill="#34D399" transform="rotate(-60)">
+        <animate attributeName="d" values="M0 -60c-20-10-20-30 0-40 20 10 20 30 0 40;M0 -80c-25-15-25-35 0-45 25 15 25 35 0 45;M0 -60c-20-10-20-30 0-40 20 10 20 30 0 40" dur="4.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  
+  <!-- Floating Elements -->
+  <g class="floating-elements">
+    <!-- Renewable Energy Symbols -->
+    <g transform="translate(150,150)">
+      <path d="M0 0l20-20l20 20l-20 20z" fill="#10B981">
+        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="10s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g transform="translate(650,150)">
+      <path d="M0 0l20-20l20 20l-20 20z" fill="#10B981">
+        <animateTransform attributeName="transform" type="rotate" values="360;0" dur="10s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Water Drops -->
+    <path d="M700 350q-20-40 0-40t0 40z" fill="#60A5FA">
+      <animate attributeName="transform" type="translate" values="0,0;0,20;0,0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M100 350q-20-40 0-40t0 40z" fill="#60A5FA">
+      <animate attributeName="transform" type="translate" values="0,0;0,20;0,0" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <g class="decorative" opacity="0.2">
+    <circle cx="100" cy="100" r="20" stroke="#059669" stroke-width="2" fill="none"/>
+    <circle cx="700" cy="500" r="20" stroke="#059669" stroke-width="2" fill="none"/>
+    <path d="M120 120l-40-40M680 480l40 40" stroke="#059669" stroke-width="2"/>
+  </g>
+  
+  <!-- Gradient Overlays -->
+  <defs>
+    <linearGradient id="eco-glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="50" y="50" width="700" height="500" rx="20" fill="url(#eco-glow)"/>
+</svg> 

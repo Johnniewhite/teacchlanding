@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  
+  <!-- Product Box -->
+  <path d="M300 200L400 150L500 200L400 250L300 200Z" fill="#4B5563" stroke="#374151" stroke-width="4"/>
+  <path d="M300 200V400L400 450V250L300 200Z" fill="#6B7280" stroke="#4B5563" stroke-width="4"/>
+  <path d="M400 250V450L500 400V200L400 250Z" fill="#9CA3AF" stroke="#6B7280" stroke-width="4"/>
+  
+  <!-- Launch Elements -->
+  <path d="M450 100C450 100 500 50 550 100C600 150 550 200 550 200" stroke="#EF4444" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="450" cy="100" r="20" fill="#EF4444"/>
+  
+  <!-- Stars -->
+  <path d="M200 150L220 170L200 190L180 170L200 150Z" fill="#F59E0B"/>
+  <path d="M600 300L620 320L600 340L580 320L600 300Z" fill="#F59E0B"/>
+  <path d="M350 50L370 70L350 90L330 70L350 50Z" fill="#F59E0B"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="400" cy="300" r="200" stroke="#E5E7EB" stroke-width="4" stroke-dasharray="8 8"/>
+</svg>

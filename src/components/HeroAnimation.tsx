@@ -16,9 +16,9 @@ export default function HeroAnimation() {
   const generateParticles = useCallback(() => {
     return Array.from({ length: 20 }).map((_, i) => ({
       id: i,
-      x: Math.floor(Math.random() * 100),
-      y: Math.floor(Math.random() * 100),
-      size: Math.floor(Math.random() * 3) + 1
+      x: (i % 5) * 20 + 10,
+      y: Math.floor(i / 5) * 20 + 10,
+      size: (i % 3) + 1
     }));
   }, []);
 
