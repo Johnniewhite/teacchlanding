@@ -150,20 +150,20 @@ export const Footer = () => {
                       href="mailto:hello@teacch.com"
                       className="text-gray-600 hover:text-teacch-orange dark:text-gray-400 dark:hover:text-teacch-orange transition-colors duration-300"
                     >
-                      hello@teacch.com
+                      admin@teacch.co
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a
                       href="tel:+1234567890"
                       className="text-gray-600 hover:text-teacch-orange dark:text-gray-400 dark:hover:text-teacch-orange transition-colors duration-300"
                     >
                       +1 (234) 567-890
                     </a>
-                  </li>
+                  </li> */}
                   <li className="text-gray-600 dark:text-gray-400">
-                    123 Innovation Street<br />
-                    Tech Hub, Digital City 12345
+                    11 Ademola Saka Close<br />
+                    Lagos, Nigeria
                   </li>
                 </ul>
               </div>
