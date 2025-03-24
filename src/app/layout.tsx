@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { Space_Grotesk, Syne } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
+import { Toaster } from 'sonner';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -84,6 +85,7 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         <Navbar />
         {children}
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   )

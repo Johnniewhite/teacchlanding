@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import emailjs from "@emailjs/browser"
+import { toast } from 'sonner';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,7 +22,39 @@ export const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
+    // console.log('Form submitted:', formData);
+
+    if(!formRef.current) return;
+
+    const serviceId= process.env.NEXT_PUBLIC_SERVICE_ID
+    const templateId= process.env.NEXT_PUBLIC_TEMPLATE_ID
+    const privateKey= process.env.NEXT_PUBLIC_PRIVATE_KEY
+    if(!serviceId  || !templateId || !privateKey) {
+      console.error('Missing required environment variables:', {
+        serviceId,
+        templateId,
+        privateKey,
+      });
+      toast.error('Failed to send message: Configuration is missing.');
+      return;
+    }
+
+
+    emailjs
+    .sendForm(
+      serviceId, 
+      templateId, 
+      formRef.current, 
+      privateKey 
+    )
+    .then((result) => {
+      toast.success('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' }); 
+    })
+    .catch((error) => {
+      console.error('Error sending email:', error);
+      toast.error('Failed to send message.');
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

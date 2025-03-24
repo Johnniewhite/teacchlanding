@@ -83,7 +83,7 @@ const subsidiaries = [
       'Community Building',
     ],
     gradient: 'from-pink-500 to-rose-500',
-    href: '/shop-mammy'
+    href: 'https://shopmammy.com'
   },
 ];
 

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Incuba8Page() {
   return (
@@ -22,9 +23,11 @@ export default function Incuba8Page() {
               <p className="text-lg text-dark-400 dark:text-gray-400">
                 Our startup incubator program designed to help entrepreneurs turn their innovative ideas into successful businesses. Get access to mentorship, resources, and a supportive community of fellow founders.
               </p>
+              <Link href={"/incuba8/rates"}>
               <button className="px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300">
                 Apply Now
               </button>
+              </Link>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -181,9 +184,11 @@ export default function Incuba8Page() {
             <p className="text-lg text-dark-400 dark:text-gray-400 max-w-3xl mx-auto mb-8">
               Join our next cohort and turn your entrepreneurial dreams into reality.
             </p>
+            <Link href={"/incuba8/rates"}>
             <button className="px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300">
               Apply to Incuba8
             </button>
+            </Link>
           </div>
         </div>
       </section>
