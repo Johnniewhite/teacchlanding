@@ -48,6 +48,7 @@ export const Contact = () => {
       privateKey 
     )
     .then((result) => {
+      console.log('Message sent successfully:', result);
       toast.success('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' }); 
     })
