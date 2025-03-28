@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   images: {
     unoptimized: true,
   },
   trailingSlash: true,
-  distDir: 'dist',
-}
+  distDir: '.next',  // Default Next.js build directory
+};
 
-module.exports = nextConfig 
+module.exports = nextConfig;
