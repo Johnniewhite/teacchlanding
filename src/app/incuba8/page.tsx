@@ -23,7 +23,7 @@ export default function Incuba8Page() {
               <p className="text-lg text-dark-400 dark:text-gray-400">
                 Our startup incubator program designed to help entrepreneurs turn their innovative ideas into successful businesses. Get access to mentorship, resources, and a supportive community of fellow founders.
               </p>
-              <Link href={"https://google.com"}>
+              <Link href={"/incuba8/rates"}>
               <button className="px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300">
                 Apply Now
               </button>
