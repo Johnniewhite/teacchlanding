@@ -55,13 +55,18 @@ jobs:
         # The command(s) to run on the remote instance
         command: |
           set -e # Exit immediately if a command exits with a non-zero status.
+          echo "Changing directory to /var/www/teacchlanding"
           cd /var/www/teacchlanding
-          # Add dependency installation if needed (e.g., npm install)
-          # echo "Installing dependencies..."
-          # npm install --production
-          echo "Attempting to reload pm2 process: teachwebsite"
-          pm2 reload teachwebsite || \
-          (echo "Reload failed, attempting to start..." && pm2 start YOUR_APP_ENTRY_POINT.js --name teachwebsite --watch) # Replace YOUR_APP_ENTRY_POINT.js
+
+          echo "Installing dependencies..."
+          sudo npm install --legacy-peer-deps
+
+          echo "Building application..."
+          sudo npm run build
+
+          echo "Restarting pm2 process: teachwebsite"
+          # Restart the process if it exists, otherwise start it using the npm start script
+          sudo pm2 restart teachwebsite || sudo pm2 start npm --name teachwebsite -- run start
 
     # Optional: Print output from the SSH command
     - name: Print SSH Output
