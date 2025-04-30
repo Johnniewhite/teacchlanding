@@ -1,0 +1,72 @@
+name: Deploy to GCE
+
+on:
+  push:
+    branches:
+      - main # Or whichever branch triggers deployment
+
+# No id-token permission needed for Service Account Key JSON auth
+permissions:
+  contents: 'read'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # 1. Authentication using Service Account Key JSON
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v2'
+      with:
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}' # Use the secret containing the full JSON
+
+    # 2. Setup gcloud CLI (needed for scp)
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v2
+      # project_id is automatically inferred from the credentials_json
+      # with:
+      #   project_id: sidis-439317
+
+    # 3. Transfer Files using gcloud scp
+    - name: Copy files to GCE instance
+      run: |-
+        # Ensure the gcloud-managed SSH key directory exists
+        mkdir -p ~/.ssh
+        # Use gcloud compute scp, assuming gcloud handles SSH key management or you have configured it
+        gcloud compute scp --recurse . teacchserver:/var/www/teacchlanding \
+          --zone "us-central1-c" \
+          --project "sidis-439317" \
+          # Add --ssh-key-file flag if NOT using default gcloud keys
+
+    # 4. Execute remote commands using ssh-compute
+    - id: 'ssh-command'
+      uses: 'google-github-actions/ssh-compute@v1'
+      with:
+        instance_name: 'teacchserver'
+        zone: 'us-central1-c'
+        project_id: 'sidis-439317' # Explicitly set project ID
+        # Use the secret containing ONLY the private key PEM block
+        ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
+        # user: 'your_ssh_user' # Optional: Specify if not using default user or OS Login
+
+        # The command(s) to run on the remote instance
+        command: |
+          set -e # Exit immediately if a command exits with a non-zero status.
+          cd /var/www/teacchlanding
+          # Add dependency installation if needed (e.g., npm install)
+          # echo "Installing dependencies..."
+          # npm install --production
+          echo "Attempting to reload pm2 process: teachwebsite"
+          pm2 reload teachwebsite || \
+          (echo "Reload failed, attempting to start..." && pm2 start YOUR_APP_ENTRY_POINT.js --name teachwebsite --watch) # Replace YOUR_APP_ENTRY_POINT.js
+
+    # Optional: Print output from the SSH command
+    - name: Print SSH Output
+      run: |
+        echo "STDOUT:"
+        echo "${{ steps.ssh-command.outputs.stdout }}"
+        echo "STDERR:"
+        echo "${{ steps.ssh-command.outputs.stderr }}"
