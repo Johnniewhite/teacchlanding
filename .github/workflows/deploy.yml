@@ -92,7 +92,8 @@ jobs:
 
           echo "Restarting pm2 process: teachwebsite"
           # Restart the process if it exists, otherwise start it using the npm start script
-          sudo pm2 restart teachwebsite || sudo pm2 start npm --name teachwebsite -- run start
+          # Run pm2 as the 'runner' user, assuming that's the desired user for the application
+          pm2 restart teachwebsite || pm2 start npm --name teachwebsite -- run start
 
     # Optional: Print output from the SSH command
     - name: Print SSH Output
