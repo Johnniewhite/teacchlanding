@@ -30,18 +30,44 @@ jobs:
       # with:
       #   project_id: sidis-439317
 
-    # 3. Transfer Files using gcloud scp
-    - name: Copy files to GCE instance
-      run: |-
-        # Ensure the gcloud-managed SSH key directory exists
-        mkdir -p ~/.ssh
-        # Use gcloud compute scp, assuming gcloud handles SSH key management or you have configured it
-        gcloud compute scp --recurse . teacchserver:/var/www/teacchlanding \
-          --zone "us-central1-c" \
-          --project "sidis-439317" \
-          # Add --ssh-key-file flag if NOT using default gcloud keys
+    # --- TEMPORARILY COMMENTED OUT SCP FOR DEBUGGING ---
+    # - name: Copy files to GCE instance
+    #   run: |-
+    #     # Ensure the gcloud-managed SSH key directory exists
+    #     mkdir -p ~/.ssh
+    #     # Use gcloud compute scp, assuming gcloud handles SSH key management or you have configured it
+    #     gcloud compute scp --recurse . teacchserver:/var/www/teacchlanding \
+    #       --zone "us-central1-c" \
+    #       --project "sidis-439317" \
+    #       # Add --ssh-key-file flag if NOT using default gcloud keys
+
+    # --- DEBUGGING STEP: Test SSH Write Permission ---
+    - name: Test SSH write permission as runner
+      id: 'ssh-test-write'
+      uses: 'google-github-actions/ssh-compute@v1'
+      with:
+        instance_name: 'teacchserver'
+        zone: 'us-central1-c'
+        project_id: 'sidis-439317'
+        ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
+        user: 'runner' # Explicitly specify the user
+        command: |
+          echo "Attempting to write file as $(whoami) in $(pwd)"
+          touch /var/www/teacchlanding/test_from_gha_runner.txt
+          ls -l /var/www/teacchlanding/test_from_gha_runner.txt
+          echo "Write test successful"
+      continue-on-error: true # Allow workflow to continue even if this fails
+
+    # Check if the test write failed
+    - name: Check Test Write Result
+      if: steps.ssh-test-write.outcome == 'failure'
+      run: |
+        echo "SSH write test failed. User 'runner' likely does not have permission or the SSH key is incorrect."
+        exit 1 # Fail the workflow
 
     # 4. Execute remote commands using ssh-compute
+    # Note: This step will likely fail if the SCP step is commented out, 
+    # as the code won't be present. Re-enable SCP once permissions are fixed.
     - id: 'ssh-command'
       uses: 'google-github-actions/ssh-compute@v1'
       with:
