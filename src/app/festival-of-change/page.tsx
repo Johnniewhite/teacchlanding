@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FaCalendarAlt, FaMapMarkerAlt, FaUsers, FaLightbulb, FaHandshake, FaGlobe, FaTimes, FaMicrophone, FaGavel, FaPodcast, FaChartLine, FaComments } from 'react-icons/fa';
+import { FaCalendarAlt, FaMapMarkerAlt, FaUsers, FaLightbulb, FaTimes, FaMicrophone, FaGavel, FaPodcast, FaChartLine, FaComments, FaVrCardboard, FaBriefcase, FaFilePowerpoint, FaCube, FaUserGraduate, FaPalette, FaMusic } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import Footer from '@/components/Footer';
 import ClientOnly from '@/components/ClientOnly';
@@ -161,15 +161,15 @@ export default function FestivalOfChangePage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto"
               >
-                <div className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-md rounded-xl p-4">
+                <div className="flex items-center justify-center space-x-3 bg-light-100/50 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-transparent rounded-xl p-4">
                   <FaCalendarAlt className="text-teacch-orange text-2xl" />
                   <span className="text-white">June 12, 2025</span>
                 </div>
-                <div className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-md rounded-xl p-4">
+                <div className="flex items-center justify-center space-x-3 bg-light-100/50 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-transparent rounded-xl p-4">
                   <FaMapMarkerAlt className="text-teacch-orange text-2xl" />
-                  <span className="text-white">Lagos, Nigeria</span>
+                  <span className="text-white">Tayo Aderinokun Auditorium, UNILAG</span>
                 </div>
-                <div className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-md rounded-xl p-4">
+                <div className="flex items-center justify-center space-x-3 bg-light-100/50 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-transparent rounded-xl p-4">
                   <FaUsers className="text-teacch-orange text-2xl" />
                   <span className="text-white">1000+ Attendees</span>
                 </div>
@@ -199,9 +199,9 @@ export default function FestivalOfChangePage() {
             )}
           </section>
 
-          <section className="relative py-24 bg-gradient-to-b from-light-100 to-light-200 dark:from-dark-500 dark:to-dark-600 overflow-hidden">
+          <section className="relative py-24 bg-gradient-to-b from-white to-gray-50 dark:from-dark-500 dark:to-dark-600 overflow-hidden">
             {/* Background Pattern */}
-            <div className="absolute inset-0 bg-pattern opacity-5"></div>
+            <div className="absolute inset-0 bg-pattern opacity-10 dark:opacity-5"></div>
             
             {/* Content */}
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -231,7 +231,7 @@ export default function FestivalOfChangePage() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.05 }}
-                    className="bg-white/5 dark:bg-dark-600/50 backdrop-blur-lg rounded-2xl p-8 border border-dark-200/10 dark:border-white/10 hover:border-teacch-orange/50 transition-all duration-300"
+                    className="bg-white dark:bg-dark-600/50 shadow-sm dark:shadow-none rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:border-teacch-orange/50 hover:shadow-lg transition-all duration-300"
                   >
                     <div className="flex items-center justify-between mb-4">
                       <motion.span
@@ -262,13 +262,13 @@ export default function FestivalOfChangePage() {
               </div>
 
               {/* Decorative Elements */}
-              <div className="absolute top-1/2 left-0 w-64 h-64 bg-teacch-green/30 rounded-full filter blur-3xl opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
-              <div className="absolute bottom-0 right-0 w-96 h-96 bg-teacch-orange/30 rounded-full filter blur-3xl opacity-20 translate-x-1/2 translate-y-1/2"></div>
+              <div className="absolute top-1/2 left-0 w-64 h-64 bg-teacch-green/30 rounded-full filter blur-3xl opacity-30 dark:opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute bottom-0 right-0 w-96 h-96 bg-teacch-orange/30 rounded-full filter blur-3xl opacity-30 dark:opacity-20 translate-x-1/2 translate-y-1/2"></div>
             </div>
           </section>
 
           {/* Impact Section */}
-          <section className="w-full py-32 bg-light-100 dark:bg-dark-500">
+          <section className="w-full py-32 bg-gray-50 dark:bg-dark-500">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-20">
                 <span className="inline-block text-sm md:text-base font-medium text-teacch-orange uppercase tracking-wider mb-4">
@@ -309,7 +309,7 @@ export default function FestivalOfChangePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="text-center space-y-4 bg-white/5 dark:bg-dark-600/50 backdrop-blur-lg p-8 rounded-2xl border border-dark-200/10 dark:border-white/10 hover:border-teacch-orange/50 transition-all duration-300"
+                    className="text-center space-y-4 bg-white dark:bg-dark-600/50 shadow-sm dark:shadow-none p-8 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-teacch-orange/50 hover:shadow-lg transition-all duration-300"
                   >
                     <div className="text-4xl md:text-6xl font-bold text-teacch-orange">
                       {stat.number}
@@ -327,7 +327,7 @@ export default function FestivalOfChangePage() {
           </section>
 
           {/* FOC 2024 Highlights */}
-          <section className="w-full py-32 bg-light-100 dark:bg-dark-600">
+          <section className="w-full py-32 bg-white dark:bg-dark-600">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-20">
                 <span className="inline-block text-sm md:text-base font-medium text-teacch-orange uppercase tracking-wider mb-4">
@@ -363,7 +363,7 @@ export default function FestivalOfChangePage() {
                   transition={{ duration: 0.5 }}
                   className="space-y-6"
                 >
-                  <p className="text-lg text-dark-400 dark:text-gray-400">
+                  <p className="text-lg text-dark-500 dark:text-gray-400">
                     The 2024 Festival of Change brought together experts who charted paths to reviving Nigeria&apos;s education sector. Key discussions centered around innovative approaches to address challenges in the educational system, including:
                   </p>
                   <ul className="space-y-4">
@@ -380,7 +380,7 @@ export default function FestivalOfChangePage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="flex items-center space-x-3 text-dark-400 dark:text-gray-400"
+                        className="flex items-center space-x-3 text-dark-500 dark:text-gray-400"
                       >
                         <FaLightbulb className="text-teacch-orange flex-shrink-0" />
                         <span>{point}</span>
@@ -393,7 +393,7 @@ export default function FestivalOfChangePage() {
           </section>
 
           {/* Image Gallery Section */}
-          <section className="w-full py-32 bg-white dark:bg-dark-500">
+          <section className="w-full py-32 bg-gray-50 dark:bg-dark-500">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-20">
                 <span className="inline-block text-sm md:text-base font-medium text-teacch-orange uppercase tracking-wider mb-4">
@@ -405,7 +405,7 @@ export default function FestivalOfChangePage() {
                     Memorable Moments
                   </span>
                 </h2>
-                <p className="text-lg md:text-xl text-dark-400 dark:text-gray-400 max-w-3xl mx-auto">
+                <p className="text-lg md:text-xl text-dark-500 dark:text-gray-400 max-w-3xl mx-auto">
                   Relive the inspiring moments from Festival of Change 2024 through our curated gallery.
                 </p>
               </div>
@@ -434,7 +434,7 @@ export default function FestivalOfChangePage() {
                           className="object-cover transition-transform duration-300 group-hover:scale-110"
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-dark-500/80 via-dark-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent dark:from-dark-500/80 dark:via-dark-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <div className="absolute bottom-0 left-0 right-0 p-4">
                             <h3 className="text-white text-sm font-medium truncate">
                               {image.title}
@@ -491,40 +491,74 @@ export default function FestivalOfChangePage() {
             </ClientOnly>
           )}
 
-          {/* FOC 2025 Preview */}
+          {/* FOC 2025 Details & Features */}
           <section className="w-full py-32 bg-white dark:bg-dark-500">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-20">
                 <span className="inline-block text-sm md:text-base font-medium text-teacch-orange uppercase tracking-wider mb-4">
-                  Coming Soon
+                  FOC 2025
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
-                  FOC 2025:
+                  Theme: CONNECT
                   <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
-                    The Future of Education
+                    Connecting Education & Technology
                   </span>
                 </h2>
-                <p className="text-lg md:text-xl text-dark-400 dark:text-gray-400 max-w-3xl mx-auto">
-                  Join us for an even bigger and more impactful Festival of Change in 2025, featuring:
+                <p className="text-lg md:text-xl text-dark-500 dark:text-gray-400 max-w-3xl mx-auto">
+                  The 2025 theme explores how technology is transforming education across all learning environments, making digital innovation accessible and inclusive for all learners. Technology is no longer a luxury but a necessity.
                 </p>
+                <div className="mt-8 text-lg text-dark-500 dark:text-gray-400">
+                  Full program schedule coming soon!
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="text-center mb-16">
+                 <h3 className="text-2xl md:text-4xl font-bold font-display mb-10 text-dark-600 dark:text-white">
+                    Special Features
+                  </h3>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {[
                   {
-                    icon: FaUsers,
-                    title: 'Global Speakers',
-                    description: 'Learn from world-renowned education experts and innovators',
+                    icon: FaVrCardboard,
+                    title: 'VR Experience Zone',
+                    description: 'Experience immersive virtual reality educational environments.',
                   },
                   {
-                    icon: FaHandshake,
-                    title: 'Networking',
-                    description: 'Connect with education leaders and potential collaborators',
+                    icon: FaBriefcase,
+                    title: 'Ed & Tech Career Fair',
+                    description: 'Connect with leading education and technology employers.',
                   },
                   {
-                    icon: FaGlobe,
-                    title: 'Innovation Showcase',
-                    description: 'Experience cutting-edge educational technologies and methodologies',
+                    icon: FaFilePowerpoint,
+                    title: 'Poster Presentations',
+                    description: 'Showcase research findings and innovative projects.',
+                  },
+                  {
+                    icon: FaCube,
+                    title: 'AR/VR Booth',
+                    description: 'Explore cutting-edge augmented and virtual reality tech.',
+                  },
+                   {
+                    icon: FaComments,
+                    title: 'Speed Mentoring',
+                    description: 'Quick, high-impact mentorship sessions with industry leaders.',
+                  },
+                  {
+                    icon: FaUserGraduate,
+                    title: 'Internship Opportunities',
+                    description: 'Connecting talent with real-world professional opportunities.',
+                  },
+                  {
+                    icon: FaPalette,
+                    title: 'Art Exhibitions',
+                    description: 'Creative expressions of education and technology\'s role.',
+                  },
+                  {
+                    icon: FaMusic,
+                    title: 'Teachers\' Musicale',
+                    description: 'A unique performance celebrating educators through music.',
                   },
                 ].map((feature, index) => (
                   <motion.div
@@ -533,13 +567,13 @@ export default function FestivalOfChangePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-light-100 dark:bg-dark-600 p-8 rounded-2xl text-center"
+                    className="bg-gray-50 dark:bg-dark-600 p-6 rounded-2xl text-center border border-gray-200 dark:border-transparent"
                   >
-                    <feature.icon className="w-12 h-12 text-teacch-orange mx-auto mb-6" />
-                    <h3 className="text-xl font-bold text-dark-600 dark:text-white mb-4">
+                    <feature.icon className="w-10 h-10 text-teacch-orange mx-auto mb-4" />
+                    <h3 className="text-lg font-bold text-dark-600 dark:text-white mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-dark-400 dark:text-gray-400">
+                    <p className="text-sm text-dark-500 dark:text-gray-400">
                       {feature.description}
                     </p>
                   </motion.div>
@@ -549,15 +583,15 @@ export default function FestivalOfChangePage() {
           </section>
 
           {/* CTA Section */}
-          <section id="register" className="w-full py-32 bg-light-100 dark:bg-dark-600">
+          <section id="register" className="w-full py-32 bg-gray-50 dark:bg-dark-600">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="bg-gradient-to-r from-teacch-green/10 to-teacch-orange/10 rounded-3xl p-12 relative overflow-hidden backdrop-blur-xl border border-white/10">
+              <div className="bg-gradient-to-r from-teacch-green/20 to-teacch-orange/20 dark:from-teacch-green/10 dark:to-teacch-orange/10 rounded-3xl p-12 relative overflow-hidden backdrop-blur-xl border border-gray-200/50 dark:border-white/10">
                 <div className="relative z-10 text-center">
                   <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                     Be Part of the Change
                   </h2>
-                  <p className="text-lg md:text-xl text-dark-400 dark:text-gray-400 max-w-3xl mx-auto mb-8">
-                    Join us on June 12, 2025, for an unforgettable experience that will shape the future of education in Africa.
+                  <p className="text-lg md:text-xl text-dark-500 dark:text-gray-400 max-w-3xl mx-auto mb-8">
+                    Join educators, innovators, students, and policymakers on June 12, 2025, to explore the future of education through technology and innovation.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                     <motion.a
@@ -576,7 +610,7 @@ export default function FestivalOfChangePage() {
                       href="https://festivalofchange.com/contact"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-8 py-4 bg-white/10 backdrop-blur-md text-white font-medium rounded-xl hover:bg-white/20 transition-all duration-300 text-lg w-full sm:w-auto border border-white/20"
+                      className="px-8 py-4 bg-gray-100 dark:bg-white/10 backdrop-blur-md text-dark-600 dark:text-white font-medium rounded-xl hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 text-lg w-full sm:w-auto border border-gray-300 dark:border-white/20"
                     >
                       Contact Us
                     </motion.a>
