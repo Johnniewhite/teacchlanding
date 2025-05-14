@@ -7,6 +7,7 @@ import { FaLightbulb, FaHandshake, FaGlobe, FaHeart, FaStar, FaBalanceScale, FaC
 import { HiOutlineAcademicCap, HiOutlineLightBulb, HiOutlineGlobe } from 'react-icons/hi';
 import Footer from '@/components/Footer';
 import ClientOnly from '@/components/ClientOnly';
+import TeamMembers from '@/components/TeamMembers';
 
 
 // Initiatives data
@@ -441,9 +442,10 @@ export default function AboutPage() {
               </div>
             </div>
           </section>
-
+              {/* Team Members */}
+            <TeamMembers/>
           {/* Our Story Section with Timeline */}
-          <section id="our-story" className="w-full py-32 bg-light-100 dark:bg-dark-600">
+          <section id="our-story" className="w-full py-32 bg-white dark:bg-dark-500">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <motion.div
@@ -502,7 +504,7 @@ export default function AboutPage() {
           </section>
 
           {/* Enhanced CTA Section */}
-          <section className="w-full py-32 bg-white dark:bg-dark-500">
+          <section className="w-full py-32 bg-light-100 dark:bg-dark-600">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="bg-gradient-to-r from-teacch-green/10 to-teacch-orange/10 rounded-3xl p-16 relative overflow-hidden backdrop-blur-xl border border-white/10">
                 <div className="relative z-10 text-center">

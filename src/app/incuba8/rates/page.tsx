@@ -2,7 +2,8 @@
 import React, { useState } from "react"
 import { motion } from 'framer-motion';
 import ContactForm from '@/components/ContactForm';
-import { Toaster } from 'react-hot-toast';
+// import { Toaster } from 'react-hot-toast';
+import { toast } from 'sonner';
 
 const offerings = {
   development: [
@@ -120,7 +121,7 @@ export default function RatePage() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      <Toaster position="top-center" />
+      {/* <Toaster position="top-center" /> */}
       
       {/* Hero Section */}
       <section className="w-full py-24 bg-light-100 dark:bg-dark-600 transition-colors duration-300">
