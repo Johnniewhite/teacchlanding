@@ -8,15 +8,15 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/ted-circle', label: 'Tech' },
-  { href: '/festival-of-change', label: 'Education' },
-  { href: '/incuba8', label: 'Incuba8' },
-  { href: '/shop-mammy', label: 'Shop Mammy' },
-  { href: '/contact', label: 'Contact' },
-];
+// const navLinks = [
+//   { href: '/', label: 'Home' },
+//   { href: '/about', label: 'About' },
+//   { href: '/ted-circle', label: 'Tech' },
+//   { href: '/festival-of-change', label: 'Education' },
+//   { href: '/incuba8', label: 'Incuba8' },
+//   { href: '/shop-mammy', label: 'Shop Mammy' },
+//   { href: '/contact', label: 'Contact' },
+// ];
 
 
 const navGroups = [

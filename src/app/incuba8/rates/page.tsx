@@ -2,8 +2,7 @@
 import React, { useState } from "react"
 import { motion } from 'framer-motion';
 import ContactForm from '@/components/ContactForm';
-// import { Toaster } from 'react-hot-toast';
-import { toast } from 'sonner';
+
 
 const offerings = {
   development: [

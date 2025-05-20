@@ -47,7 +47,7 @@ const TeamMembers = () => {
                         </span>
                     </h2>
                     <p className="text-lg md:text-xl text-dark-400 dark:text-gray-400 max-w-3xl mx-auto">
-                        The passionate individuals driving TEACcH's mission forward with expertise and dedication.
+                        The passionate individuals driving TEACCH&apos;s mission forward with expertise and dedication.
                     </p>
                 </div>
 
