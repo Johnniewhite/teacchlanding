@@ -9,25 +9,25 @@ const teamMembers = [
         name: 'Erioluwa Adeyinka',
         role: 'Founder & CEO',
         bio: 'Visionary leader driving TEACCH\'s mission to transform African social innovation through creative intellectual development.',
-        image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGVhZHNob3R8ZW58MHx8MHx8fDA%3D',
+        image: "https://cdn.prod.website-files.com/61cdad1a8cdf722279528e87/669f888cbbf57b8ae7b15481_1697071968551.jpeg",
     },
     {
-        name: 'John Doe',
-        role: 'Director of Programs',
-        bio: 'Experienced program manager with a passion for developing initiatives that empower young African innovators.',
-        image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aGVhZHNob3R8ZW58MHx8MHx8fDA%3D',
-    },
-    {
-        name: 'Jane Smith',
+        name: 'Doyinsola Owolabi',
         role: 'Head of Operations',
         bio: 'Operations specialist ensuring TEACCH\'s initiatives run smoothly and efficiently across all locations.',
-        image: 'https://images.unsplash.com/photo-1611432579699-484f7990b127?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGVhZHNob3R8ZW58MHx8MHx8fDA%3D',
+        image: 'https://res.cloudinary.com/dm8jh1n7a/image/upload/v1748253052/Doyinsola_Owolabi_i09rc0.jpg',
     },
     {
-        name: 'Michael Johnson',
-        role: 'Tech Lead',
+        name: 'Temisan Joshua',
+        role: 'CTO and Tech Team Lead',
+        bio: 'Experienced program manager with a passion for developing initiatives that empower young African innovators.',
+        image: 'https://res.cloudinary.com/dm8jh1n7a/image/upload/v1748252665/Joshua_jpzjpi.jpg',
+    },
+    {
+        name: 'Anjola Oluwabada',
+        role: 'Branding and Marketing Team Lead',
         bio: 'Technology expert guiding our digital transformation and incubator tech initiatives.',
-        image: 'https://media.istockphoto.com/id/2182227440/photo/portrait-of-smiling-man-against-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q4F6nHGs9DhsDLMwL9CHmIp1VSA2GwYg9nzJg0jOfH0=',
+        image: 'https://res.cloudinary.com/dm8jh1n7a/image/upload/v1748253745/Anjola_i73i68.jpg',
     }
 ];
 
@@ -47,7 +47,7 @@ const TeamMembers = () => {
                         </span>
                     </h2>
                     <p className="text-lg md:text-xl text-dark-400 dark:text-gray-400 max-w-3xl mx-auto">
-                        The passionate individuals driving TEACcH's mission forward with expertise and dedication.
+                        The passionate individuals driving TEACcH&apos;s mission forward with expertise and dedication.
                     </p>
                 </div>
 
@@ -66,6 +66,7 @@ const TeamMembers = () => {
                                     src={member.image}
                                     alt={member.name}
                                     fill
+                                    
                                     className="object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-dark-500/80 via-transparent to-transparent" />
