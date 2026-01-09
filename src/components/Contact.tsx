@@ -118,8 +118,8 @@ export const Contact = () => {
     <section className="relative py-32 w-full bg-light-500 dark:bg-dark-500 overflow-hidden" id="contact" ref={sectionRef}>
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 w-full">
-        <div className="absolute inset-0 w-full bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] opacity-5"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-light-500 via-light-500/95 to-light-500 dark:from-dark-500 dark:via-dark-500/95 dark:to-dark-500"></div>
+        <div className="absolute inset-0 w-full bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[72px_72px] opacity-5"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-light-500 via-light-500/95 to-light-500 dark:from-dark-500 dark:via-dark-500/95 dark:to-dark-500"></div>
       </div>
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -129,7 +129,7 @@ export const Contact = () => {
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-dark-500 dark:text-white">
             Let&apos;s Create{' '}
-            <span className="text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+            <span className="text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
               Together
             </span>
           </h2>
@@ -190,7 +190,7 @@ export const Contact = () => {
             <div>
               <button
                 type="submit"
-                className="w-full px-8 py-4 rounded-lg bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium hover:shadow-lg hover:shadow-teacch-orange/20 transition-all duration-300 transform hover:-translate-y-1"
+                className="w-full px-8 py-4 rounded-lg bg-linear-to-r from-teacch-green to-teacch-orange text-white font-medium hover:shadow-lg hover:shadow-teacch-orange/20 transition-all duration-300 transform hover:-translate-y-1"
               >
                 Send Message
               </button>

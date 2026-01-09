@@ -93,7 +93,7 @@ export default function TEDCirclePage() {
     <div>
       <main className="flex min-h-screen flex-col">
         {/* Hero Section */}
-        <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-dark-500 to-dark-600">
+        <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden bg-linear-to-b from-dark-500 to-dark-600">
           <div className="absolute inset-0 bg-pattern opacity-5"></div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
             <motion.div
@@ -107,7 +107,7 @@ export default function TEDCirclePage() {
               </span>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-display text-white leading-tight">
                 TED Circle
-                <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                   The Education Development Circle
                 </span>
               </h1>
@@ -119,7 +119,7 @@ export default function TEDCirclePage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href="#register"
-                  className="px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300 text-lg w-full sm:w-auto"
+                  className="px-8 py-4 bg-linear-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300 text-lg w-full sm:w-auto"
                 >
                   Join TED Circle
                 </motion.a>
@@ -150,7 +150,7 @@ export default function TEDCirclePage() {
               </span>
               <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                 Social Innovators
-                <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                   Program
                 </span>
               </h2>
@@ -204,7 +204,7 @@ export default function TEDCirclePage() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="flex items-center space-x-4 text-dark-400 dark:text-gray-400"
                     >
-                      <div className="relative w-8 h-8 flex-shrink-0">
+                      <div className="relative w-8 h-8 shrink-0">
                         <Image
                           src={point.illustration}
                           alt={point.text}
@@ -248,7 +248,7 @@ export default function TEDCirclePage() {
               </span>
               <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                 The 6 Ps
-                <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                   Framework
                 </span>
               </h2>
@@ -267,7 +267,7 @@ export default function TEDCirclePage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="relative group"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-r ${framework.gradient} opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-500 -z-10`}></div>
+                  <div className={`absolute inset-0 bg-linear-to-r ${framework.gradient} opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-500 -z-10`}></div>
                   <div className="relative glass rounded-2xl p-8 h-full border border-dark-500/5 dark:border-white/5 bg-light-600/50 dark:bg-dark-600/50 backdrop-blur-xl transition-all duration-500 hover:border-teacch-orange/20">
                     <div className="relative w-32 h-32 mx-auto mb-6">
                       <Image
@@ -286,7 +286,7 @@ export default function TEDCirclePage() {
                     <ul className="space-y-2">
                       {framework.description.map((item, i) => (
                         <li key={i} className="flex items-start space-x-2 text-dark-400 dark:text-gray-400">
-                          <div className="w-1.5 h-1.5 rounded-full bg-teacch-orange flex-shrink-0 mt-2"></div>
+                          <div className="w-1.5 h-1.5 rounded-full bg-teacch-orange shrink-0 mt-2"></div>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -312,7 +312,7 @@ export default function TEDCirclePage() {
               </span>
               <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                 TED Circle
-                <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                   Workshop
                 </span>
               </h2>
@@ -379,7 +379,7 @@ export default function TEDCirclePage() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="flex items-center space-x-4 text-dark-400 dark:text-gray-400"
                     >
-                      <div className="relative w-8 h-8 flex-shrink-0">
+                      <div className="relative w-8 h-8 shrink-0">
                         <Image
                           src={point.illustration}
                           alt={point.text}
@@ -410,7 +410,7 @@ export default function TEDCirclePage() {
               </span>
               <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                 Why Join
-                <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                   TED Circle
                 </span>
               </h2>
@@ -451,7 +451,7 @@ export default function TEDCirclePage() {
         {/* CTA Section */}
         <section id="register" className="relative py-32 bg-light-100 dark:bg-dark-500">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-r from-teacch-green/10 to-teacch-orange/10 rounded-3xl p-12 relative overflow-hidden backdrop-blur-xl border border-white/10">
+            <div className="bg-linear-to-r from-teacch-green/10 to-teacch-orange/10 rounded-3xl p-12 relative overflow-hidden backdrop-blur-xl border border-white/10">
               <div className="relative z-10 text-center">
                 <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                   Join TED Circle Today
@@ -464,7 +464,7 @@ export default function TEDCirclePage() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     href="#apply"
-                    className="px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300 text-lg w-full sm:w-auto"
+                    className="px-8 py-4 bg-linear-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300 text-lg w-full sm:w-auto"
                   >
                     Apply Now
                   </motion.a>

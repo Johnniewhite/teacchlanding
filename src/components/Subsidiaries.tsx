@@ -11,7 +11,7 @@ const subsidiaries = [
     subtitle: 'Social Innovation Program',
     description: 'Empowering social innovators with essential knowledge and advanced skills for creating sustainable solutions. Our program focuses on building entrepreneurial solutions driven by passion for change.',
     logo: (
-      <div className="text-xl sm:text-2xl font-bold font-display bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent">
+      <div className="text-xl sm:text-2xl font-bold font-display bg-linear-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent">
         The Education Development Circle
       </div>
     ),
@@ -30,9 +30,9 @@ const subsidiaries = [
     description: 'A transformative conference responding to global education challenges. We bring together thought leaders, innovators, and change-makers to generate bold ideas and inspire action.',
     logo: (
       <div className="text-xl sm:text-2xl font-bold font-display">
-        <span className="bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent">Festival</span>
+        <span className="bg-linear-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent">Festival</span>
         <span className="text-teacch-orange mx-1 sm:mx-2">OF</span>
-        <span className="bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent">Change</span>
+        <span className="bg-linear-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent">Change</span>
       </div>
     ),
     features: [
@@ -49,7 +49,7 @@ const subsidiaries = [
     subtitle: 'Innovation Incubator Program',
     description: 'A comprehensive incubator program providing holistic solutions to organizations. We offer strategic guidance and resources to help organizations thrive and scale their impact.',
     logo: (
-      <div className="text-2xl sm:text-3xl font-bold font-display bg-gradient-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent tracking-wider">
+      <div className="text-2xl sm:text-3xl font-bold font-display bg-linear-to-r from-teacch-green to-emerald-500 bg-clip-text text-transparent tracking-wider">
         INCUBA8
       </div>
     ),
@@ -95,8 +95,8 @@ export const Subsidiaries = () => {
     <section className="relative py-32 w-full bg-light-500 dark:bg-dark-500 overflow-hidden" id="subsidiaries" ref={sectionRef}>
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 w-full">
-        <div className="absolute inset-0 w-full bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black,transparent)]"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-light-500 via-light-500/95 to-light-500 dark:from-dark-500 dark:via-dark-500/95 dark:to-dark-500"></div>
+        <div className="absolute inset-0 w-full bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[72px_72px] mask-[radial-gradient(ellipse_50%_50%_at_50%_50%,black,transparent)]"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-light-500 via-light-500/95 to-light-500 dark:from-dark-500 dark:via-dark-500/95 dark:to-dark-500"></div>
       </div>
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,7 +111,7 @@ export const Subsidiaries = () => {
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-dark-500 dark:text-white">
             Driving{' '}
-            <span className="text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+            <span className="text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
               Social Innovation
             </span>
           </h2>
@@ -133,7 +133,7 @@ export const Subsidiaries = () => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="h-full"
               >
-                <div className={`absolute inset-0 bg-gradient-to-r ${subsidiary.gradient} opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-500 -z-10`}></div>
+                <div className={`absolute inset-0 bg-linear-to-r ${subsidiary.gradient} opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-500 -z-10`}></div>
                 <div className="relative glass rounded-2xl p-4 sm:p-8 h-full border border-dark-500/5 dark:border-white/5 bg-light-600/50 dark:bg-dark-600/50 backdrop-blur-xl transition-all duration-500 hover:border-teacch-orange/20">
                   <div className="flex flex-col h-full">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center mb-6">
@@ -156,7 +156,7 @@ export const Subsidiaries = () => {
                           key={feature}
                           className="flex items-center space-x-2 text-sm text-dark-400 dark:text-gray-400"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-teacch-orange flex-shrink-0"></div>
+                          <div className="w-1.5 h-1.5 rounded-full bg-teacch-orange shrink-0"></div>
                           <span className="flex-1">{feature}</span>
                         </div>
                       ))}

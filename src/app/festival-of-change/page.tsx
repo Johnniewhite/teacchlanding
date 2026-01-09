@@ -96,7 +96,7 @@ export default function FestivalOfChangePage() {
           <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
             {/* Video Background */}
             <div className="absolute inset-0 w-full h-full">
-              <div className="absolute inset-0 bg-gradient-to-b from-dark-500/90 via-dark-500/85 to-dark-500/90 z-10"></div>
+              <div className="absolute inset-0 bg-linear-to-b from-dark-500/90 via-dark-500/85 to-dark-500/90 z-10"></div>
               {isClient && (
                 <div className="absolute inset-0">
                   <video
@@ -125,7 +125,7 @@ export default function FestivalOfChangePage() {
                 </span>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-display text-white leading-tight">
                   Festival of Change
-                  <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                  <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                     2025
                   </span>
                 </h1>
@@ -137,7 +137,7 @@ export default function FestivalOfChangePage() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     href="#register"
-                    className="px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300 text-lg w-full sm:w-auto"
+                    className="px-8 py-4 bg-linear-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300 text-lg w-full sm:w-auto"
                   >
                     Register Now
                   </motion.a>
@@ -199,7 +199,7 @@ export default function FestivalOfChangePage() {
             )}
           </section>
 
-          <section className="relative py-24 bg-gradient-to-b from-white to-gray-50 dark:from-dark-500 dark:to-dark-600 overflow-hidden">
+          <section className="relative py-24 bg-linear-to-b from-white to-gray-50 dark:from-dark-500 dark:to-dark-600 overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-pattern opacity-10 dark:opacity-5"></div>
             
@@ -216,7 +216,7 @@ export default function FestivalOfChangePage() {
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold font-display text-dark-600 dark:text-white mb-6">
                   Festival of Change
-                  <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                  <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                     2024 Statistics
                   </span>
                 </h2>
@@ -276,7 +276,7 @@ export default function FestivalOfChangePage() {
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                   The First Festival
-                  <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                  <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                     of Change
                   </span>
                 </h2>
@@ -335,7 +335,7 @@ export default function FestivalOfChangePage() {
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                   A Landmark Event for
-                  <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                  <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                     Educational Innovation
                   </span>
                 </h2>
@@ -382,7 +382,7 @@ export default function FestivalOfChangePage() {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         className="flex items-center space-x-3 text-dark-500 dark:text-gray-400"
                       >
-                        <FaLightbulb className="text-teacch-orange flex-shrink-0" />
+                        <FaLightbulb className="text-teacch-orange shrink-0" />
                         <span>{point}</span>
                       </motion.li>
                     ))}
@@ -401,7 +401,7 @@ export default function FestivalOfChangePage() {
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                   FOC 2024
-                  <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                  <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                     Memorable Moments
                   </span>
                 </h2>
@@ -434,7 +434,7 @@ export default function FestivalOfChangePage() {
                           className="object-cover transition-transform duration-300 group-hover:scale-110"
                           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent dark:from-dark-500/80 dark:via-dark-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/10 to-transparent dark:from-dark-500/80 dark:via-dark-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <div className="absolute bottom-0 left-0 right-0 p-4">
                             <h3 className="text-white text-sm font-medium truncate">
                               {image.title}
@@ -451,7 +451,7 @@ export default function FestivalOfChangePage() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={loadMore}
-                        className="px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300"
+                        className="px-8 py-4 bg-linear-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300"
                       >
                         Load More
                       </motion.button>
@@ -500,7 +500,7 @@ export default function FestivalOfChangePage() {
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                   Theme: CONNECT
-                  <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                  <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                     Connecting Education & Technology
                   </span>
                 </h2>
@@ -585,7 +585,7 @@ export default function FestivalOfChangePage() {
           {/* CTA Section */}
           <section id="register" className="w-full py-32 bg-gray-50 dark:bg-dark-600">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="bg-gradient-to-r from-teacch-green/20 to-teacch-orange/20 dark:from-teacch-green/10 dark:to-teacch-orange/10 rounded-3xl p-12 relative overflow-hidden backdrop-blur-xl border border-gray-200/50 dark:border-white/10">
+              <div className="bg-linear-to-r from-teacch-green/20 to-teacch-orange/20 dark:from-teacch-green/10 dark:to-teacch-orange/10 rounded-3xl p-12 relative overflow-hidden backdrop-blur-xl border border-gray-200/50 dark:border-white/10">
                 <div className="relative z-10 text-center">
                   <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                     Be Part of the Change
@@ -600,7 +600,7 @@ export default function FestivalOfChangePage() {
                       href="https://festivalofchange.com/register"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300 text-lg w-full sm:w-auto"
+                      className="px-8 py-4 bg-linear-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300 text-lg w-full sm:w-auto"
                     >
                       Register for FOC 2025
                     </motion.a>

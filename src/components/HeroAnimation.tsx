@@ -29,7 +29,7 @@ export default function HeroAnimation() {
   return (
     <div className="absolute inset-0 z-10 overflow-hidden">
       {/* Light mode specific background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-light-100/80 to-light-200/80 dark:from-dark-500/80 dark:to-dark-600/80" />
+      <div className="absolute inset-0 bg-linear-to-br from-light-100/80 to-light-200/80 dark:from-dark-500/80 dark:to-dark-600/80" />
       
       {/* Light mode pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">

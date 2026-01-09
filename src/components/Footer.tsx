@@ -86,7 +86,7 @@ export const Footer = () => {
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 w-full h-full bg-pattern opacity-5"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-white dark:from-dark-500 dark:via-dark-500/95 dark:to-dark-500"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-white via-white/95 to-white dark:from-dark-500 dark:via-dark-500/95 dark:to-dark-500"></div>
       </div>
 
       <div className="relative w-full py-16" ref={contentRef}>

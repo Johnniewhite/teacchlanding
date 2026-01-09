@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@config "../../tailwind.config.ts";
 
 @layer base {
   * {
@@ -48,11 +47,13 @@
   }
 }
 
-:root {
-  --teacch-green: #4CAF50;
-  --teacch-orange: #FF5722;
-  --dark-500: #0A0A0A;
-  --dark-600: #121212;
+@layer utilities {
+  :root {
+    --teacch-green: #4caf50;
+    --teacch-orange: #ff5722;
+    --dark-500: #0a0a0a;
+    --dark-600: #121212;
+  }
 }
 
 @layer base {

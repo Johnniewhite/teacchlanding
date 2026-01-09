@@ -114,17 +114,17 @@ export default function AboutPage() {
         <main className="flex min-h-screen flex-col relative">
           {/* Progress bar */}
           <motion.div 
-            className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-teacch-green to-teacch-orange z-50"
+            className="fixed top-0 left-0 right-0 h-1 bg-linear-to-r from-teacch-green to-teacch-orange z-50"
             style={{ scaleX: scaleProgress }}
           />
 
           {/* Hero Section with Enhanced Parallax */}
-          <section className="relative w-full min-h-[100vh] flex items-center justify-center overflow-hidden">
+          <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
             <motion.div
               style={{ scale: heroScale, opacity: heroOpacity }}
               className="absolute inset-0 w-full h-full"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-dark-500/95 via-dark-500/90 to-dark-500/95 z-10"></div>
+              <div className="absolute inset-0 bg-linear-to-b from-dark-500/95 via-dark-500/90 to-dark-500/95 z-10"></div>
               <Image
                 src="/images/team2.jpg"
                 alt="TEACCH Impact"
@@ -153,7 +153,7 @@ export default function AboutPage() {
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-display text-white leading-tight">
                   Transforming Africa Through
                   <motion.span 
-                    className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green"
+                    className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green"
                     animate={{ backgroundPosition: ['0%', '100%'] }}
                     transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
                   >
@@ -244,7 +244,7 @@ export default function AboutPage() {
                     </span>
                     <h2 className="text-3xl md:text-5xl font-bold font-display text-dark-600 dark:text-white leading-tight">
                       Driving Change Through
-                      <span className="block text-gradient bg-gradient-to-r from-teacch-green to-teacch-orange">
+                      <span className="block text-gradient bg-linear-to-r from-teacch-green to-teacch-orange">
                         Purpose & Vision
                       </span>
                     </h2>
@@ -290,7 +290,7 @@ export default function AboutPage() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-500/80 via-transparent to-transparent">
+                  <div className="absolute inset-0 bg-linear-to-t from-dark-500/80 via-transparent to-transparent">
                     <div className="absolute bottom-8 left-8 right-8">
                       <p className="text-white text-lg font-medium">
                         &quot;Empowering the next generation of African innovators to create lasting social impact.&quot;
@@ -309,7 +309,7 @@ export default function AboutPage() {
           <section className="w-full py-32 bg-light-100 dark:bg-dark-600 relative overflow-hidden">
             <motion.div 
               style={{ y: valuesY }}
-              className="absolute inset-0 w-full h-full bg-gradient-to-b from-dark-500/20 to-dark-500/40 z-0"
+              className="absolute inset-0 w-full h-full bg-linear-to-b from-dark-500/20 to-dark-500/40 z-0"
             />
             
             <motion.div 
@@ -342,7 +342,7 @@ export default function AboutPage() {
                       repeat: Infinity,
                       repeatType: 'reverse'
                     }}
-                    className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green"
+                    className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green"
                   >
                     Define Our Impact
                   </motion.span>
@@ -363,7 +363,7 @@ export default function AboutPage() {
                     <motion.div
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
-                      className="bg-gradient-to-br from-teacch-green/10 to-teacch-orange/10 p-4 rounded-xl inline-block mb-6 group-hover:from-teacch-green/20 group-hover:to-teacch-orange/20"
+                      className="bg-linear-to-br from-teacch-green/10 to-teacch-orange/10 p-4 rounded-xl inline-block mb-6 group-hover:from-teacch-green/20 group-hover:to-teacch-orange/20"
                     >
                       <value.icon className="w-12 h-12 text-teacch-orange" />
                     </motion.div>
@@ -388,7 +388,7 @@ export default function AboutPage() {
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                   Transformative
-                  <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                  <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                     Initiatives
                   </span>
                 </h2>
@@ -408,7 +408,7 @@ export default function AboutPage() {
                     whileHover={{ y: -10 }}
                     className={`p-8 rounded-2xl cursor-pointer transform transition-all duration-300 ${
                       activeInitiative === index
-                        ? 'bg-gradient-to-br from-teacch-green/10 to-teacch-orange/10'
+                        ? 'bg-linear-to-br from-teacch-green/10 to-teacch-orange/10'
                         : 'bg-light-100 dark:bg-dark-600'
                     }`}
                     onClick={() => setActiveInitiative(index)}
@@ -461,7 +461,7 @@ export default function AboutPage() {
                     </span>
                     <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                       A Vision of
-                      <span className="block text-gradient bg-gradient-to-r from-teacch-green to-teacch-orange">
+                      <span className="block text-gradient bg-linear-to-r from-teacch-green to-teacch-orange">
                         African Innovation
                       </span>
                     </h2>
@@ -491,7 +491,7 @@ export default function AboutPage() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-500/80 via-transparent to-transparent">
+                  <div className="absolute inset-0 bg-linear-to-t from-dark-500/80 via-transparent to-transparent">
                     <div className="absolute bottom-8 left-8 right-8">
                       <p className="text-white text-lg font-medium">
                         &quot;Innovation thrives when we empower young minds with the tools and support they need to create change.&quot;
@@ -506,7 +506,7 @@ export default function AboutPage() {
           {/* Enhanced CTA Section */}
           <section className="w-full py-32 bg-light-100 dark:bg-dark-600">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="bg-gradient-to-r from-teacch-green/10 to-teacch-orange/10 rounded-3xl p-16 relative overflow-hidden backdrop-blur-xl border border-white/10">
+              <div className="bg-linear-to-r from-teacch-green/10 to-teacch-orange/10 rounded-3xl p-16 relative overflow-hidden backdrop-blur-xl border border-white/10">
                 <div className="relative z-10 text-center">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -516,7 +516,7 @@ export default function AboutPage() {
                   >
                     <h2 className="text-3xl md:text-5xl font-bold font-display text-dark-600 dark:text-white">
                       Be Part of the
-                      <span className="block text-gradient bg-gradient-to-r from-teacch-green to-teacch-orange">
+                      <span className="block text-gradient bg-linear-to-r from-teacch-green to-teacch-orange">
                         Innovation Movement
                       </span>
                     </h2>
@@ -528,7 +528,7 @@ export default function AboutPage() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         href="/contact"
-                        className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300 text-lg"
+                        className="inline-flex items-center px-8 py-4 bg-linear-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300 text-lg"
                       >
                         Get Involved
                         <FaChevronRight className="ml-2 w-4 h-4" />

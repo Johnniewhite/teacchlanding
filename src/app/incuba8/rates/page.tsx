@@ -264,7 +264,7 @@ export default function RatePage() {
           </p>
           <button 
             onClick={() => handleGetStarted('General Inquiry')}
-            className="mt-6 px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange hover:from-teacch-orange hover:to-teacch-green text-white rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="mt-6 px-8 py-4 bg-linear-to-r from-teacch-green to-teacch-orange hover:from-teacch-orange hover:to-teacch-green text-white rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
             Get Started Today
           </button>

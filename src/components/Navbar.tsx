@@ -217,7 +217,7 @@ const Navbar = () => {
                         <Link
                           key={link.href}
                           href={href}
-                          className={`block px-4 py-2 text-sm border-b-1 hover:text-teacch-orange   `}
+                          className={`block px-4 py-2 text-sm border-b hover:text-teacch-orange   `}
                         >
                           {link.label}
                         </Link>

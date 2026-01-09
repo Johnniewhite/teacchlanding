@@ -24,7 +24,7 @@ export default function Incuba8Page() {
                 Our startup incubator program designed to help entrepreneurs turn their innovative ideas into successful businesses. Get access to mentorship, resources, and a supportive community of fellow founders.
               </p>
               <Link href={"/incuba8/rates"}>
-              <button className="px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300">
+              <button className="px-8 py-4 bg-linear-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300">
                 Apply Now
               </button>
               </Link>
@@ -185,7 +185,7 @@ export default function Incuba8Page() {
               Join our next cohort and turn your entrepreneurial dreams into reality.
             </p>
             <Link href={"/incuba8/rates"}>
-            <button className="px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300">
+            <button className="px-8 py-4 bg-linear-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300">
               Apply to Incuba8
             </button>
             </Link>

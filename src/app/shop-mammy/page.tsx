@@ -18,7 +18,7 @@ const AnimatedContent = dynamic(() => import('../../components/AnimatedContent')
 const HeroAnimation = dynamic(() => import('../../components/HeroAnimation'), {
   ssr: false,
   loading: () => (
-    <div className="absolute inset-0 bg-gradient-to-br from-light-100 to-light-200 dark:from-dark-500 dark:to-dark-600" />
+    <div className="absolute inset-0 bg-linear-to-br from-light-100 to-light-200 dark:from-dark-500 dark:to-dark-600" />
   )
 });
 
@@ -61,7 +61,7 @@ export default function ShopMammyPage() {
                   href="https://app.shopmammy.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl text-lg hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300"
+                  className="inline-block px-8 py-4 bg-linear-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl text-lg hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300"
                 >
                   Start Shopping
                 </a>
@@ -154,7 +154,7 @@ export default function ShopMammyPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="w-full py-20 px-4 bg-gradient-to-br from-dark-500 to-dark-600">
+      <section className="w-full py-20 px-4 bg-linear-to-br from-dark-500 to-dark-600">
         <div className="max-w-7xl mx-auto text-center">
           <AnimatedContent delay={0.2}>
             <div className="mb-8">
@@ -169,7 +169,7 @@ export default function ShopMammyPage() {
                   href="https://app.shopmammy.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-8 py-4 bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl text-lg hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300 w-full sm:w-auto"
+                  className="inline-block px-8 py-4 bg-linear-to-r from-teacch-green to-teacch-orange text-white font-medium rounded-xl text-lg hover:shadow-2xl hover:shadow-teacch-green/20 transition-all duration-300 w-full sm:w-auto"
                 >
                   Shop Now
                 </a>

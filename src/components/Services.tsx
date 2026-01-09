@@ -126,8 +126,8 @@ export const Services = () => {
     <section className="relative py-32 w-full overflow-hidden bg-light-500 dark:bg-dark-500" id="services" ref={sectionRef}>
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] opacity-5"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-light-500 via-light-500/95 to-light-500 dark:from-dark-500 dark:via-dark-500/95 dark:to-dark-500"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[72px_72px] opacity-5"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-light-500 via-light-500/95 to-light-500 dark:from-dark-500 dark:via-dark-500/95 dark:to-dark-500"></div>
       </div>
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,9 +135,9 @@ export const Services = () => {
           <span className="inline-block text-sm md:text-base font-medium text-teacch-orange uppercase tracking-wider mb-4">
             Our Services
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-dark-500 dark:text-white break-words">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 text-dark-500 dark:text-white wrap-break-word">
             Transforming Ideas into{' '}
-            <span className="text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+            <span className="text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
               Reality
             </span>
           </h2>
@@ -163,7 +163,7 @@ export const Services = () => {
               }}
               className="group relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-teacch-green to-teacch-orange opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-500 -z-10"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-teacch-green to-teacch-orange opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-500 -z-10"></div>
               <div className="relative glass rounded-2xl p-8 h-full border border-dark-500/5 dark:border-white/5 bg-light-600/50 dark:bg-dark-600/50 backdrop-blur-xl transition-all duration-500 hover:border-teacch-orange/20">
                 <div className="flex flex-col h-full items-center text-center">
                   <div className="service-icon mb-6 text-teacch-orange group-hover:text-teacch-green transition-colors duration-300">
@@ -176,7 +176,7 @@ export const Services = () => {
                     {service.description}
                   </p>
                   <div className="mt-6">
-                    <button className="px-6 py-2 rounded-full bg-gradient-to-r from-teacch-green to-teacch-orange text-white font-medium hover:shadow-lg hover:shadow-teacch-orange/20 transition-all duration-300 transform hover:-translate-y-1">
+                    <button className="px-6 py-2 rounded-full bg-linear-to-r from-teacch-green to-teacch-orange text-white font-medium hover:shadow-lg hover:shadow-teacch-orange/20 transition-all duration-300 transform hover:-translate-y-1">
                       Learn More
                     </button>
                   </div>

@@ -42,7 +42,7 @@ const TeamMembers = () => {
                     </span>
                     <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 text-dark-600 dark:text-white">
                         Meet The
-                        <span className="block text-gradient bg-gradient-to-r from-teacch-green via-teacch-orange to-teacch-green">
+                        <span className="block text-gradient bg-linear-to-r from-teacch-green via-teacch-orange to-teacch-green">
                             Visionaries
                         </span>
                     </h2>
@@ -69,7 +69,7 @@ const TeamMembers = () => {
                                     
                                     className="object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-dark-500/80 via-transparent to-transparent" />
+                                <div className="absolute inset-0 bg-linear-to-t from-dark-500/80 via-transparent to-transparent" />
                             </div>
 
                             <div className="relative z-10 h-full flex flex-col justify-end p-6">
