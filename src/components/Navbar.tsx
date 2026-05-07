@@ -23,43 +23,44 @@ const navGroups = [
   {
     label: 'Technology',
     links: [
-      { href: '/web-development', label: 'Web Development' },
-      { href: '/web-app', label: 'Web App Development' },
-      { href: '/mobile-app', label: 'Mobile App Development' },
-      { href: '/ui-ux', label: 'UI/UX Design' },
+      { href: '/web-development', label: 'Web Development', description: 'Modern, responsive websites & portals.' },
+      { href: '/web-app', label: 'Web App Development', description: 'Scalable cloud-native applications.' },
+      { href: '/mobile-app', label: 'Mobile App Development', description: 'Premium iOS & Android experiences.' },
+      { href: '/ui-ux', label: 'UI/UX Design', description: 'User-centric digital interface design.' },
     ],
   },
   {
     label: 'Branding & Marketing',
     links: [
-      { href: '/social-media', label: 'Social Media Management' },
-      { href: '/cc', label: 'Content Creation' },
-      { href: '/design', label: 'Design' },
+      { href: '/social-media', label: 'Social Media Management', description: 'Grow your digital community.' },
+      { href: '/cc', label: 'Content Creation', description: 'Compelling brand storytelling & media.' },
+      { href: '/design', label: 'Design', description: 'Visual identity & graphic systems.' },
     ],
   },
   {
     label: 'Project',
     links: [
-      { href: '/programs', label: 'Programs Developed' },
+      { href: '/programs', label: 'Programs Developed', description: 'Explore our innovation initiatives.' },
     ],
   },
   {
     label: 'Education',
     links: [
-      { href: '/ted-circle', label: 'TED Circle' },
-      { href: 'https://www.thewellteachersfoundation.com/', label: 'The Well' },
+      { href: '/ted-circle', label: 'TED Circle', description: 'Collaborative learning communities.' },
+      { href: 'https://www.thewellteachersfoundation.com/', label: 'The Well', description: 'Supporting educators across Africa.' },
     ],
   },
   {
     label: 'Innovation',
     links: [
-      { href: '/festival-of-change', label: 'FOC' },
-      { href: '/shop-mammy', label: 'Shop Mammy' },
+      { href: '/festival-of-change', label: 'FOC', description: 'Our annual social innovation festival.' },
+      { href: '/shop-mammy', label: 'Shop Mammy', description: 'Empowering local retail commerce.' },
     ],
-  },{
-    label:"Work Space",
+  },
+  {
+    label: "Work Space",
     links: [
-      {href:"/innova8/rates",label:"Work Space"}
+      { href: "/innova8/rates", label: "Work Space", description: "Premium collaborative environments." }
     ]
   }
 ];
@@ -202,27 +203,32 @@ const Navbar = () => {
                 {/* Dropdown Menu */}
                 {group.links.length > 0 && activeDropdown === group.label && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="absolute left-0 mt-2 w-48  dark:bg-dark-600 rounded-md shadow-lg z-10 overflow-hidden"
+                    initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 15, scale: 0.95 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="absolute left-0 mt-4 w-72 p-2 bg-white/95 dark:bg-dark-600/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/20 dark:border-white/5 z-50"
                   >
-                    {group.links.map((link) => {
-
-                      const isTechAndBrandGroup = group.label === "Technology" || group.label === "Branding & Marketing"
-                      const href = isTechAndBrandGroup ? "/incuba8/rates" : link.href
-
-                      return (
-
+                    <div className="grid gap-1">
+                      {group.links.map((link) => (
                         <Link
                           key={link.href}
-                          href={href}
-                          className={`block px-4 py-2 text-sm border-b hover:text-teacch-orange   `}
+                          href={link.href}
+                          className="group flex flex-col p-3 rounded-xl transition-all duration-300 hover:bg-teacch-orange/10 dark:hover:bg-teacch-orange/20"
                         >
-                          {link.label}
+                          <span className="text-sm font-bold text-dark-600 dark:text-white group-hover:text-teacch-orange transition-colors">
+                            {link.label}
+                          </span>
+                          {/* @ts-ignore */}
+                          {link.description && (
+                            <p className="text-[11px] text-dark-400 dark:text-gray-400 mt-1 leading-tight group-hover:text-dark-600 dark:group-hover:text-gray-300 transition-colors">
+                              {/* @ts-ignore */}
+                              {link.description}
+                            </p>
+                          )}
                         </Link>
-                      )
-                    })}
+                      ))}
+                    </div>
                   </motion.div>
                 )}
               </div>
@@ -316,24 +322,29 @@ const Navbar = () => {
               {activeDropdown === group.label && (
                 <div className="mt-2 pl-4 space-y-2">
                   {group.links.map((link) => {
-                    const isTechAndBrandGroup = group.label === "Technology" || group.label === "Branding & Marketing"
-                    const href = isTechAndBrandGroup ? "/incuba8/rates" : link.href
-
-
                     return (
                       <Link
                         key={link.href}
-                        href={href}
-                        className={`block px-4 py-2 text-sm ${pathname === link.href
-                          ? 'text-teacch-orange font-medium'
-                          : 'text-dark-600 dark:text-white hover:text-teacch-orange'
+                        href={link.href}
+                        className={`block px-4 py-3 rounded-xl transition-all ${pathname === link.href
+                          ? 'bg-teacch-orange/10 text-teacch-orange'
+                          : 'text-dark-600 dark:text-white hover:bg-light-600 dark:hover:bg-dark-600'
                           }`}
                         onClick={() => {
                           setIsOpen(false);
                           setActiveDropdown(null);
                         }}
                       >
-                        {link.label}
+                        <div className="flex flex-col">
+                          <span className="text-sm font-bold">{link.label}</span>
+                          {/* @ts-ignore */}
+                          {link.description && (
+                            <span className="text-[10px] text-dark-400 dark:text-gray-400 mt-0.5 leading-tight">
+                              {/* @ts-ignore */}
+                              {link.description}
+                            </span>
+                          )}
+                        </div>
                       </Link>
                     )
                   })}
